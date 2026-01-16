@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ================================================== -->
+    <!-- SNIPPETS INSA - Agua Pura y Segura                -->
+    <!-- Componentes arrastrables para el sitio web        -->
+    <!-- ================================================== -->
+
+    <!-- ===== SNIPPET: Hero INSA ===== -->
+    <template id="s_insa_hero" name="INSA Hero Principal">
+        <section class="s_insa_hero pt96 pb96" style="background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 50%, #25a0b0 100%);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <span class="badge rounded-pill px-3 py-2 mb-3" style="background: rgba(255,255,255,0.2); color: white; font-size: 0.9rem;">
+                            <i class="fa fa-check-circle me-1"/> 40 años de confianza
+                        </span>
+                        <h1 class="display-3 text-white fw-bold mb-4">
+                            Agua Pura y Segura<br/>
+                            <span style="color: #7dd3e1;">para tu hogar</span>
+                        </h1>
+                        <p class="lead text-white mb-4" style="opacity: 0.95; font-size: 1.3rem;">
+                            Hace 40 años llevamos a tu hogar o empresa agua pura y segura. 
+                            Calidad garantizada, servicio de entrega a domicilio.
+                        </p>
+                        <div class="mt-4">
+                            <a href="https://wa.me/543516821088" target="_blank" class="btn btn-light btn-lg rounded-pill me-2 mb-2">
+                                <i class="fa fa-whatsapp me-2"/>Pedir Ahora
+                            </a>
+                            <a href="#productos" class="btn btn-outline-light btn-lg rounded-pill mb-2">
+                                Ver Productos
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center d-none d-lg-block">
+                        <div class="position-relative" style="height: 400px;">
+                            <div class="position-absolute" style="top: 5%; left: 15%;">
+                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 100px; height: 100px;">
+                                    <i class="fa fa-tint fa-3x" style="color: #0a5c6b;"/>
+                                </div>
+                            </div>
+                            <div class="position-absolute" style="top: 10%; right: 20%;">
+                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                    <i class="fa fa-truck fa-2x" style="color: #1e8a9a;"/>
+                                </div>
+                            </div>
+                            <div class="position-absolute" style="top: 45%; left: 5%;">
+                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                    <i class="fa fa-home fa-2x" style="color: #0a5c6b;"/>
+                                </div>
+                            </div>
+                            <div class="position-absolute" style="top: 35%; right: 10%;">
+                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                                    <i class="fa fa-shield fa-4x" style="color: #25a0b0;"/>
+                                </div>
+                            </div>
+                            <div class="position-absolute" style="bottom: 15%; left: 25%;">
+                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+                                    <i class="fa fa-clock-o fa-3x" style="color: #1e8a9a;"/>
+                                </div>
+                            </div>
+                            <div class="position-absolute" style="bottom: 25%; right: 25%;">
+                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 75px; height: 75px;">
+                                    <i class="fa fa-star fa-2x" style="color: #0a5c6b;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Propuesta de Valor INSA ===== -->
+    <template id="s_insa_propuesta_valor" name="INSA Propuesta de Valor">
+        <section class="s_insa_propuesta pt80 pb80 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold" style="color: #0a5c6b;">¿Por qué elegir INSA?</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                        Somos líderes en distribución de agua y soda en Córdoba. 
+                        Calidad, confianza y servicio personalizado.
+                    </p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Valor 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #0a5c6b !important;">
+                            <div class="card-body p-4 text-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mb-3 mx-auto" 
+                                     style="width: 70px; height: 70px; background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                                    <i class="fa fa-history fa-lg text-white"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">40 Años de Experiencia</h5>
+                                <p class="text-muted">
+                                    Desde 1985 abasteciendo hogares y empresas con agua de la más alta calidad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Valor 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #0a5c6b !important;">
+                            <div class="card-body p-4 text-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mb-3 mx-auto" 
+                                     style="width: 70px; height: 70px; background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                                    <i class="fa fa-truck fa-lg text-white"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Entrega a Domicilio</h5>
+                                <p class="text-muted">
+                                    Llevamos tus productos directamente a tu hogar o empresa, sin costo adicional.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Valor 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #0a5c6b !important;">
+                            <div class="card-body p-4 text-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mb-3 mx-auto" 
+                                     style="width: 70px; height: 70px; background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                                    <i class="fa fa-certificate fa-lg text-white"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Calidad Garantizada</h5>
+                                <p class="text-muted">
+                                    Agua purificada con los más altos estándares de calidad y seguridad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Valor 4 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #0a5c6b !important;">
+                            <div class="card-body p-4 text-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mb-3 mx-auto" 
+                                     style="width: 70px; height: 70px; background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                                    <i class="fa fa-users fa-lg text-white"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Atención Personalizada</h5>
+                                <p class="text-muted">
+                                    Nuestro equipo está siempre disponible para atender tus consultas y pedidos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Valor 5 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #0a5c6b !important;">
+                            <div class="card-body p-4 text-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mb-3 mx-auto" 
+                                     style="width: 70px; height: 70px; background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                                    <i class="fa fa-building fa-lg text-white"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Hogares y Empresas</h5>
+                                <p class="text-muted">
+                                    Atendemos tanto clientes particulares como empresas con soluciones a medida.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Valor 6 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #0a5c6b !important;">
+                            <div class="card-body p-4 text-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mb-3 mx-auto" 
+                                     style="width: 70px; height: 70px; background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                                    <i class="fa fa-tags fa-lg text-white"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Precios Mayoristas</h5>
+                                <p class="text-muted">
+                                    Descuentos especiales para compras por mayor y promociones exclusivas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Productos Retornables ===== -->
+    <template id="s_insa_productos_retornables" name="INSA Productos Retornables">
+        <section class="s_insa_productos_retornables pt80 pb80" style="background: #f8f9fa;" id="productos">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="badge rounded-pill px-3 py-2 mb-3" style="background: #0a5c6b; color: white;">
+                        <i class="fa fa-recycle me-1"/> Productos Retornables
+                    </span>
+                    <h2 class="display-5 fw-bold" style="color: #0a5c6b;">Bidones y Dispensers</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                        Productos retornables de alta calidad. Cuidamos el medio ambiente y tu bolsillo.
+                    </p>
+                </div>
+                
+                <div class="row g-4 justify-content-center">
+                    <!-- Producto 1: Dispenser USB -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="mb-3" style="height: 120px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-tint fa-5x" style="color: #0a5c6b;"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Dispenser USB</h5>
+                                <p class="text-muted small mb-3">Dispenser eléctrico portátil con carga USB</p>
+                                <span class="badge rounded-pill px-4 py-2" style="background: #0a5c6b; font-size: 1.2rem;">
+                                    $ 12.000
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Producto 2: Bidón 15 litros -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="mb-3" style="height: 120px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-tint fa-5x" style="color: #1e8a9a;"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Bidón 15 litros</h5>
+                                <p class="text-muted small mb-3">Bidón de agua purificada retornable</p>
+                                <span class="badge rounded-pill px-4 py-2" style="background: #0a5c6b; font-size: 1.2rem;">
+                                    $ 4.000
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Producto 3: Dispenser Mesa -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="mb-3" style="height: 120px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-tint fa-5x" style="color: #25a0b0;"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Dispenser Mesa</h5>
+                                <p class="text-muted small mb-3">Dispenser de mesa con canilla</p>
+                                <span class="badge rounded-pill px-4 py-2" style="background: #0a5c6b; font-size: 1.2rem;">
+                                    $ 5.500
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Producto 4: Bidón 20 litros -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="mb-3" style="height: 120px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-tint fa-5x" style="color: #0a5c6b;"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Bidón 20 litros</h5>
+                                <p class="text-muted small mb-3">Bidón grande de agua purificada</p>
+                                <span class="badge rounded-pill px-4 py-2" style="background: #0a5c6b; font-size: 1.2rem;">
+                                    $ 5.500
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Productos Soda y Más ===== -->
+    <template id="s_insa_productos_soda" name="INSA Soda y Más">
+        <section class="s_insa_productos_soda pt80 pb80 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="badge rounded-pill px-3 py-2 mb-3" style="background: #1e8a9a; color: white;">
+                        <i class="fa fa-flask me-1"/> Soda y Bebidas
+                    </span>
+                    <h2 class="display-5 fw-bold" style="color: #0a5c6b;">Soda, Amargo y Bidones</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                        Variedad de productos para toda la familia. Soda fresca y bebidas de calidad.
+                    </p>
+                </div>
+                
+                <div class="row g-4 justify-content-center">
+                    <!-- Soda 1 1/4 litros -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="mb-3" style="height: 120px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-flask fa-5x" style="color: #0a5c6b;"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Soda 1 1/4 litros</h5>
+                                <p class="text-muted small mb-3">Sifón de soda tradicional</p>
+                                <span class="badge rounded-pill px-4 py-2" style="background: #1e8a9a; font-size: 1.2rem;">
+                                    $ 1.100
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Amargo -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="mb-3" style="height: 120px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-glass fa-5x" style="color: #c9a227;"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Amargo Sabot</h5>
+                                <p class="text-muted small mb-3">Pomelo rosado tradicional</p>
+                                <span class="badge rounded-pill px-4 py-2" style="background: #1e8a9a; font-size: 1.2rem;">
+                                    $ 1.500
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bidón 6 litros -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="mb-3" style="height: 120px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-tint fa-5x" style="color: #25a0b0;"/>
+                                </div>
+                                <h5 class="fw-bold" style="color: #0a5c6b;">Bidón 6 litros</h5>
+                                <p class="text-muted small mb-3">Bidón compacto con manija</p>
+                                <span class="badge rounded-pill px-4 py-2" style="background: #1e8a9a; font-size: 1.2rem;">
+                                    $ 3.300
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Productos Descartables - Por Unidad ===== -->
+    <template id="s_insa_descartables_unidad" name="INSA Descartables Por Unidad">
+        <section class="s_insa_descartables_unidad pt80 pb80" style="background: #f8f9fa;">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="badge rounded-pill px-3 py-2 mb-3" style="background: #0a5c6b; color: white;">
+                        <i class="fa fa-cube me-1"/> Por Unidades
+                    </span>
+                    <h2 class="display-5 fw-bold" style="color: #0a5c6b;">Productos Descartables</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                        Precios por unidad y packs. Ideales para uso doméstico.
+                    </p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header py-3" style="background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                                <h5 class="mb-0 text-white fw-bold">
+                                    <i class="fa fa-shopping-cart me-2"/>Precios por Unidad
+                                </h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <table class="table table-striped mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="py-3 ps-4">
+                                                <i class="fa fa-tint me-2" style="color: #0a5c6b;"/>
+                                                Bidón de agua 6 litros
+                                            </td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #0a5c6b;">$1.380</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">
+                                                <i class="fa fa-tint me-2" style="color: #0a5c6b;"/>
+                                                Botella de agua 1.5 litros (Pack x6 unidades)
+                                            </td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #0a5c6b;">$5.450</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">
+                                                <i class="fa fa-tint me-2" style="color: #0a5c6b;"/>
+                                                Botella de agua 600 cm3 (Pack x12 unidades)
+                                            </td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #0a5c6b;">$5.900</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">
+                                                <i class="fa fa-flask me-2" style="color: #1e8a9a;"/>
+                                                Botella de soda 500 cm3 (Pack x12 unidades)
+                                            </td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #0a5c6b;">$7.050</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">
+                                                <i class="fa fa-flask me-2" style="color: #1e8a9a;"/>
+                                                Sifón de soda 2 litros (Pack x6 unidades)
+                                            </td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #0a5c6b;">$7.900</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Promociones ===== -->
+    <template id="s_insa_promociones" name="INSA Promociones">
+        <section class="s_insa_promociones pt80 pb80 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="badge rounded-pill px-3 py-2 mb-3" style="background: #e74c3c; color: white;">
+                        <i class="fa fa-star me-1"/> Promociones
+                    </span>
+                    <h2 class="display-5 fw-bold" style="color: #0a5c6b;">Ofertas Especiales</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                        Aprovechá nuestras promociones y ahorrá en tus compras.
+                    </p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header py-3" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+                                <h5 class="mb-0 text-white fw-bold">
+                                    <i class="fa fa-fire me-2"/>Promociones Vigentes
+                                </h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <table class="table table-striped mb-0">
+                                    <thead style="background: #f8f9fa;">
+                                        <tr>
+                                            <th class="py-3 ps-4">Producto</th>
+                                            <th class="py-3 text-center">Precio Unit.</th>
+                                            <th class="py-3 pe-4 text-end">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="py-3 ps-4">30 bidones de agua de 6 litros</td>
+                                            <td class="py-3 text-center text-muted">$1.200 c/u</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #e74c3c;">$36.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">10 Packs de botellas de agua 1.5 litros</td>
+                                            <td class="py-3 text-center text-muted">$4.630 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #e74c3c;">$46.300</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">10 Packs de botellas de agua 600 cm3</td>
+                                            <td class="py-3 text-center text-muted">$5.350 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #e74c3c;">$53.500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">10 Packs de botellas de soda 500 cm3</td>
+                                            <td class="py-3 text-center text-muted">$6.400 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #e74c3c;">$64.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">10 Packs de sifones de soda 2 litros</td>
+                                            <td class="py-3 text-center text-muted">$7.100 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #e74c3c;">$71.000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Ventas Por Mayor ===== -->
+    <template id="s_insa_por_mayor" name="INSA Ventas Por Mayor">
+        <section class="s_insa_por_mayor pt80 pb80" style="background: #f8f9fa;">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="badge rounded-pill px-3 py-2 mb-3" style="background: #27ae60; color: white;">
+                        <i class="fa fa-building me-1"/> Por Mayor
+                    </span>
+                    <h2 class="display-5 fw-bold" style="color: #0a5c6b;">Precios Mayoristas</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                        Precios especiales para comercios y empresas. Consultá por envíos.
+                    </p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header py-3" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%);">
+                                <h5 class="mb-0 text-white fw-bold">
+                                    <i class="fa fa-truck me-2"/>Ventas Por Mayor
+                                </h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <table class="table table-striped mb-0">
+                                    <thead style="background: #f8f9fa;">
+                                        <tr>
+                                            <th class="py-3 ps-4">Producto</th>
+                                            <th class="py-3 text-center">Precio Unit.</th>
+                                            <th class="py-3 pe-4 text-end">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="py-3 ps-4">Bidón de agua 6 litros X 50 unidades</td>
+                                            <td class="py-3 text-center text-muted">$1.140 c/u</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #27ae60;">$57.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">Bidón de agua 6 litros X 100 unidades</td>
+                                            <td class="py-3 text-center text-muted">$1.100 c/u</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #27ae60;">$110.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">Botella de agua 1.5 litros - 20 Packs x6 unidades</td>
+                                            <td class="py-3 text-center text-muted">$4.450 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #27ae60;">$89.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">Botella de agua 600 cm3 - 20 Packs x12 unidades</td>
+                                            <td class="py-3 text-center text-muted">$5.000 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #27ae60;">$100.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">Botella de soda 500 cm3 - 20 Packs x12 unidades</td>
+                                            <td class="py-3 text-center text-muted">$6.200 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #27ae60;">$124.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">Sifón de soda 2 litros - 20 Packs x6 unidades</td>
+                                            <td class="py-3 text-center text-muted">$6.800 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #27ae60;">$136.000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Ventas Por Pallets ===== -->
+    <template id="s_insa_pallets" name="INSA Ventas Por Pallets">
+        <section class="s_insa_pallets pt80 pb80 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="badge rounded-pill px-3 py-2 mb-3" style="background: #8e44ad; color: white;">
+                        <i class="fa fa-cubes me-1"/> Pallets
+                    </span>
+                    <h2 class="display-5 fw-bold" style="color: #0a5c6b;">Compra por Pallets</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                        Los mejores precios para grandes volúmenes. Ideal para distribuidores.
+                    </p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header py-3" style="background: linear-gradient(135deg, #8e44ad 0%, #7d3c98 100%);">
+                                <h5 class="mb-0 text-white fw-bold">
+                                    <i class="fa fa-cubes me-2"/>Precios por Pallet
+                                </h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <table class="table table-striped mb-0">
+                                    <thead style="background: #f8f9fa;">
+                                        <tr>
+                                            <th class="py-3 ps-4">Producto</th>
+                                            <th class="py-3 text-center">Precio Unit.</th>
+                                            <th class="py-3 pe-4 text-end">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="py-3 ps-4">Bidón de agua 6 litros x 168 unidades</td>
+                                            <td class="py-3 text-center text-muted">$1.060 c/u</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #8e44ad;">$178.080</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">Botella de agua 1.5 litros (Pack x6) x 84 packs</td>
+                                            <td class="py-3 text-center text-muted">$4.200 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #8e44ad;">$352.800</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">Botella de agua 600 cm3 - 96 Packs x12 unidades</td>
+                                            <td class="py-3 text-center text-muted">$4.650 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #8e44ad;">$446.400</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">Botella de soda 500 cm3 - 96 Packs x12 unidades</td>
+                                            <td class="py-3 text-center text-muted">$6.000 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #8e44ad;">$576.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 ps-4">Sifón de soda 2 litros - 60 Packs x6 unidades</td>
+                                            <td class="py-3 text-center text-muted">$6.400 x pack</td>
+                                            <td class="py-3 pe-4 text-end fw-bold" style="color: #8e44ad;">$372.000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Slogan / Filosofía INSA ===== -->
+    <template id="s_insa_slogan" name="INSA Slogan">
+        <section class="s_insa_slogan pt80 pb80" style="background: #0a5c6b;">
+            <div class="container">
+                <div class="text-center py-4">
+                    <i class="fa fa-tint fa-3x text-white mb-4" style="opacity: 0.5;"/>
+                    <p class="display-6 text-white fst-italic" style="max-width: 900px; margin: 0 auto; line-height: 1.6;">
+                        "Hace 40 años llevamos a tu hogar o empresa agua pura y segura"
+                    </p>
+                    <p class="text-white-50 mt-3">— INSA, Agua Pura y Segura</p>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: CTA WhatsApp ===== -->
+    <template id="s_insa_cta_whatsapp" name="INSA CTA WhatsApp">
+        <section class="s_insa_cta_whatsapp pt64 pb64" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h3 class="text-white fw-bold mb-2">
+                            <i class="fa fa-whatsapp me-2"/>¿Querés hacer tu pedido?
+                        </h3>
+                        <p class="text-white mb-0" style="opacity: 0.9;">
+                            Escribinos por WhatsApp y recibí tu agua en la puerta de tu casa.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                        <a href="https://wa.me/543516821088" target="_blank" class="btn btn-light btn-lg rounded-pill">
+                            <i class="fa fa-whatsapp me-2"/>351 682-1088
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: CTA Pedido ===== -->
+    <template id="s_insa_cta_pedido" name="INSA CTA Pedido">
+        <section class="s_insa_cta_pedido pt80 pb80" style="background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+            <div class="container text-center">
+                <h2 class="display-5 text-white fw-bold mb-3">¿Listo para pedir?</h2>
+                <p class="lead text-white mb-4" style="opacity: 0.9; max-width: 600px; margin: 0 auto;">
+                    Hacé tu pedido ahora y recibí agua pura y segura en tu hogar o empresa.
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://wa.me/543516821088" target="_blank" class="btn btn-light btn-lg rounded-pill">
+                        <i class="fa fa-whatsapp me-2"/>Pedir por WhatsApp
+                    </a>
+                    <a href="tel:+543516821088" class="btn btn-outline-light btn-lg rounded-pill">
+                        <i class="fa fa-phone me-2"/>Llamar Ahora
+                    </a>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Contacto / Info ===== -->
+    <template id="s_insa_contacto" name="INSA Contacto">
+        <section class="s_insa_contacto pt80 pb80" style="background: #1a1a2e;">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-3">
+                        <div class="mb-4">
+                            <img src="/insa_website/static/src/img/snippets/logo.png" alt="INSA" style="max-height: 60px;" class="mb-3"/>
+                        </div>
+                        <p class="text-white-50">
+                            Agua Pura y Segura<br/>
+                            Hace 40 años llevamos calidad a tu hogar o empresa.
+                        </p>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5 class="text-white fw-bold mb-4">Ubicación</h5>
+                        <ul class="list-unstyled text-white-50">
+                            <li class="mb-2">
+                                <i class="fa fa-map-marker me-2" style="color: #25a0b0;"/>
+                                Puerto Rico 2650, Calle 2
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa fa-building me-2" style="color: #25a0b0;"/>
+                                Córdoba (CP 5000)
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa fa-flag me-2" style="color: #25a0b0;"/>
+                                Argentina
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5 class="text-white fw-bold mb-4">Contacto</h5>
+                        <ul class="list-unstyled text-white-50">
+                            <li class="mb-2">
+                                <i class="fa fa-phone me-2" style="color: #25a0b0;"/>
+                                <a href="tel:+543516821088" class="text-white-50 text-decoration-none">351 682-1088</a>
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa fa-whatsapp me-2" style="color: #25D366;"/>
+                                <a href="https://wa.me/543516821088" target="_blank" class="text-white-50 text-decoration-none">WhatsApp</a>
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa fa-globe me-2" style="color: #25a0b0;"/>
+                                <a href="https://www.aguainsa.com" target="_blank" class="text-white-50 text-decoration-none">www.aguainsa.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5 class="text-white fw-bold mb-4">Redes Sociales</h5>
+                        <ul class="list-unstyled text-white-50">
+                            <li class="mb-2">
+                                <i class="fa fa-instagram me-2" style="color: #E4405F;"/>
+                                <a href="https://instagram.com/insaaguaysoda" target="_blank" class="text-white-50 text-decoration-none">@insaaguaysoda</a>
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://wa.me/543516821088" target="_blank" class="btn btn-outline-light rounded-pill">
+                                <i class="fa fa-whatsapp me-2"/>Pedir Ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Separador con Onda ===== -->
+    <template id="s_insa_separador" name="INSA Separador">
+        <section class="s_insa_separador pt32 pb32" style="background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+            <div class="container text-center">
+                <div class="d-flex justify-content-center align-items-center gap-4">
+                    <div style="width: 60px; height: 2px; background: rgba(255,255,255,0.5);"/>
+                    <i class="fa fa-tint text-white fa-lg"/>
+                    <div style="width: 60px; height: 2px; background: rgba(255,255,255,0.5);"/>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Banner 40 Años ===== -->
+    <template id="s_insa_banner_40" name="INSA Banner 40 Años">
+        <section class="s_insa_banner_40 pt48 pb48" style="background: #f8f9fa; border-left: 5px solid #0a5c6b;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 text-center">
+                        <div class="rounded-circle d-inline-flex align-items-center justify-content-center" 
+                             style="width: 100px; height: 100px; background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                            <span class="text-white fw-bold" style="font-size: 2rem;">40</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <h3 class="fw-bold mb-2" style="color: #0a5c6b;">40 años de experiencia</h3>
+                        <p class="text-muted mb-0">
+                            Desde 1985 trabajamos para llevar agua pura y segura a miles de hogares y empresas. 
+                            Nuestra trayectoria nos respalda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Servicios Destacados ===== -->
+    <template id="s_insa_servicios" name="INSA Servicios">
+        <section class="s_insa_servicios pt80 pb80 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold" style="color: #0a5c6b;">Nuestros Servicios</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                        Todo lo que necesitás para tener agua de calidad en tu hogar o empresa.
+                    </p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                                <i class="fa fa-home fa-3x text-white"/>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="fw-bold" style="color: #0a5c6b;">Entrega a Domicilio</h6>
+                                <p class="small text-muted mb-0">Llevamos tus productos hasta la puerta de tu casa sin costo adicional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                                <i class="fa fa-building fa-3x text-white"/>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="fw-bold" style="color: #0a5c6b;">Servicio a Empresas</h6>
+                                <p class="small text-muted mb-0">Soluciones de hidratación para oficinas, comercios y empresas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 100%);">
+                                <i class="fa fa-truck fa-3x text-white"/>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="fw-bold" style="color: #0a5c6b;">Venta Mayorista</h6>
+                                <p class="small text-muted mb-0">Precios especiales para revendedores y grandes volúmenes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ================================================== -->
+    <!-- REGISTRO DE SNIPPETS EN EL PANEL DEL EDITOR       -->
+    <!-- ================================================== -->
+    
+    <!-- Agregar snippets INSA al panel de snippets del website builder -->
+    <template id="insa_snippets" inherit_id="website.snippets" name="INSA Snippets">
+        <!-- Crear el grupo INSA -->
+        <xpath expr="//snippets[@id='snippet_groups']/*[1]" position="before">
+            <t snippet-group="insa" t-snippet="website.s_snippet_group" string="INSA" t-thumbnail="/insa_website/static/src/img/snippets/insa_group.svg"/>
+        </xpath>
+        
+        <!-- Agregar los snippets al grupo -->
+        <xpath expr="//snippets[@id='snippet_structure']/*[1]" position="before">
+            <t t-snippet="insa_website.s_insa_hero" string="INSA Hero" group="insa">
+                <keywords>insa hero inicio agua</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_propuesta_valor" string="Por qué INSA" group="insa">
+                <keywords>insa propuesta valor porque</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_productos_retornables" string="Productos Retornables" group="insa">
+                <keywords>insa productos retornables bidones dispensers</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_productos_soda" string="Soda y Bebidas" group="insa">
+                <keywords>insa soda bebidas amargo</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_descartables_unidad" string="Descartables Unidad" group="insa">
+                <keywords>insa descartables unidad precios</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_promociones" string="Promociones" group="insa">
+                <keywords>insa promociones ofertas descuentos</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_por_mayor" string="Ventas Por Mayor" group="insa">
+                <keywords>insa mayorista por mayor empresas</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_pallets" string="Ventas Por Pallets" group="insa">
+                <keywords>insa pallets distribuidor volumen</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_slogan" string="Slogan INSA" group="insa">
+                <keywords>insa slogan filosofia frase</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_cta_whatsapp" string="CTA WhatsApp" group="insa">
+                <keywords>insa cta whatsapp contacto</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_cta_pedido" string="CTA Pedido" group="insa">
+                <keywords>insa cta pedido comprar</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_contacto" string="Contacto INSA" group="insa">
+                <keywords>insa contacto footer redes</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_separador" string="Separador" group="insa">
+                <keywords>insa separador linea</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_banner_40" string="Banner 40 Años" group="insa">
+                <keywords>insa banner 40 años experiencia</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_servicios" string="Servicios INSA" group="insa">
+                <keywords>insa servicios entrega domicilio</keywords>
+            </t>
+        </xpath>
+    </template>
+    
+    <!-- Opciones de snippets -->
+    <template id="insa_snippet_options" inherit_id="website.snippet_options" name="INSA Snippet Options">
+        <xpath expr="." position="inside">
+            <div data-selector=".s_insa_hero, .s_insa_propuesta, .s_insa_productos_retornables, .s_insa_productos_soda, .s_insa_descartables_unidad, .s_insa_promociones, .s_insa_por_mayor, .s_insa_pallets, .s_insa_slogan, .s_insa_cta_whatsapp, .s_insa_cta_pedido, .s_insa_contacto, .s_insa_separador, .s_insa_banner_40, .s_insa_servicios" 
+                 data-drop-near="section"/>
+        </xpath>
+    </template>
+
+</odoo>
