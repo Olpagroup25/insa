@@ -25,7 +25,7 @@
                             <img src="/insa_website/static/src/img/snippets/logo.png" alt="INSA" style="max-height: 100px;"/>
                         </div>
                         <div class="mb-4">
-                            <span class="badge rounded-pill px-4 py-3" style="background: #a3d526; color: #2e3480; font-size: 1.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                            <span class="badge rounded-pill px-4 py-3" style="background: #a3d526; color: #ffffff; font-size: 1.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
                                 <i class="fa fa-star me-2"/>40 AÑOS DE CONFIANZA
                             </span>
                         </div>
@@ -64,21 +64,21 @@
 
     <!-- ===== SNIPPET: Hero Alternativo con Dispenser ===== -->
     <template id="s_insa_hero_dispenser" name="INSA Hero Dispenser">
-        <section class="s_insa_hero_dispenser" style="position: relative; min-height: 90vh; background: #2e3480; overflow: hidden;">
+        <section class="s_insa_hero_dispenser" style="position: relative; min-height: 90vh; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); overflow: hidden;">
             <div class="container h-100">
                 <div class="row align-items-center" style="min-height: 90vh;">
                     <div class="col-lg-6">
-                        <span class="badge rounded-pill px-4 py-2 mb-4" style="background: #a3d526; color: #2e3480; font-size: 1rem; font-weight: 700;">
+                        <span class="badge rounded-pill px-4 py-2 mb-4" style="background: #a3d526; color: #ffffff; font-size: 1rem; font-weight: 700;">
                             <i class="fa fa-star me-2"/>Nuevo Producto
                         </span>
-                        <h1 class="display-3 fw-bold mb-4" style="color: #ffffff;">
+                        <h1 class="display-3 fw-bold mb-4" style="color: #2e3480;">
                             Dispenser USB<br/>
                             <span style="color: #a3d526;">Portátil y Práctico</span>
                         </h1>
-                        <p class="lead mb-4" style="color: rgba(255,255,255,0.9); font-size: 1.3rem;">
+                        <p class="lead mb-4" style="color: #555; font-size: 1.3rem;">
                             El nuevo dispenser con carga USB. Llevá tu agua a donde vayas.
                         </p>
-                        <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill px-5" style="background: #a3d526; color: #2e3480; font-weight: 700;">
+                        <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill px-5" style="background: #25D366; color: #ffffff; font-weight: 700;">
                             <i class="fa fa-whatsapp me-2"/>Consultar Precio
                         </a>
                     </div>
@@ -224,8 +224,7 @@
                             <img src="/insa_website/static/src/img/snippets/Bidones INSA.jpg" 
                                  alt="Bidones INSA" class="w-100 h-100" style="object-fit: cover;"/>
                             <div class="position-absolute bottom-0 start-0 end-0 p-4" style="background: linear-gradient(transparent, rgba(46,52,128,0.98));">
-                                <h4 class="fw-bold mb-2" style="color: #ffffff;">Bidones de Agua</h4>
-                                <p class="mb-0" style="color: #a3d526; font-weight: 600;">15 y 20 litros • Retornables</p>
+                                <h4 class="fw-bold mb-2" style="color: #ffffff;">AGUA PURA INSA</h4>
                             </div>
                         </div>
                     </div>
@@ -261,10 +260,10 @@
         <section class="s_insa_galeria_soda pt80 pb80" style="background: #ffffff;">
             <div class="container">
                 <div class="text-center mb-5">
-                    <span class="badge rounded-pill px-4 py-2 mb-3" style="background: #a3d526; color: #2e3480;">
-                        <i class="fa fa-flask me-2"/>Soda
+                    <span class="badge rounded-pill px-4 py-2 mb-3" style="background: #a3d526; color: #ffffff;">
+                        <i class="fa fa-flask me-2"/>SIFONES
                     </span>
-                    <h2 class="display-5 fw-bold" style="color: #2e3480;">Soda y Sifones</h2>
+                    <h2 class="display-4 fw-bold" style="color: #2e3480;">SODA <span style="color: #a3d526;">TRADICIONAL</span></h2>
                 </div>
                 
                 <div class="row g-4 align-items-center">
@@ -291,8 +290,8 @@
                             <div class="mb-4" style="font-size: 4rem; color: #a3d526;">
                                 <i class="fa fa-flask"/>
                             </div>
-                            <h4 class="fw-bold" style="color: #2e3480;">Soda Fresca</h4>
-                            <p style="color: #666;">Sifones de soda tradicional. Ideal para acompañar tus comidas.</p>
+                            <h4 class="fw-bold" style="color: #2e3480;">LA MEJOR SODA</h4>
+                            <p style="color: #555;">Sifones de soda tradicional. <strong>Ideal para el fernet y las comidas.</strong></p>
                             <a href="https://wa.me/543516821088" target="_blank" class="btn rounded-pill px-4" style="background: #2e3480; color: #ffffff;">
                                 <i class="fa fa-whatsapp me-2"/>Pedir Sifones
                             </a>
@@ -346,7 +345,7 @@
 
     <!-- ===== SNIPPET: Dispenser Destacado ===== -->
     <template id="s_insa_dispenser" name="INSA Dispenser">
-        <section class="s_insa_dispenser pt80 pb80" style="background: #2e3480;">
+        <section class="s_insa_dispenser pt80 pb80" style="background: #ffffff; border-top: 5px solid #a3d526;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 text-center mb-4 mb-lg-0">
@@ -354,57 +353,29 @@
                              alt="Dispenser INSA" class="img-fluid rounded-4 shadow-lg" style="max-height: 450px;"/>
                     </div>
                     <div class="col-lg-6">
-                        <span class="badge rounded-pill px-4 py-2 mb-4" style="background: #a3d526; color: #2e3480; font-weight: 700;">
+                        <span class="badge rounded-pill px-4 py-2 mb-4" style="background: #a3d526; color: #ffffff; font-weight: 700;">
                             <i class="fa fa-star me-2"/>Destacado
                         </span>
-                        <h2 class="display-5 fw-bold mb-4" style="color: #ffffff;">
+                        <h2 class="display-5 fw-bold mb-4" style="color: #2e3480;">
                             Dispenser de Mesa
                         </h2>
-                        <p class="lead mb-4" style="color: rgba(255,255,255,0.9);">
+                        <p class="lead mb-4" style="color: #555;">
                             Práctico dispenser de mesa con canilla. Ideal para oficinas y hogares. 
                             Compatible con bidones de 15 y 20 litros.
                         </p>
                         <ul class="list-unstyled mb-4">
-                            <li class="mb-2" style="color: #ffffff;">
+                            <li class="mb-2" style="color: #333;">
                                 <i class="fa fa-check me-2" style="color: #a3d526;"/>Fácil instalación
                             </li>
-                            <li class="mb-2" style="color: #ffffff;">
+                            <li class="mb-2" style="color: #333;">
                                 <i class="fa fa-check me-2" style="color: #a3d526;"/>Canilla de alta calidad
                             </li>
-                            <li class="mb-2" style="color: #ffffff;">
+                            <li class="mb-2" style="color: #333;">
                                 <i class="fa fa-check me-2" style="color: #a3d526;"/>Diseño compacto
                             </li>
                         </ul>
-                        <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill px-5" style="background: #a3d526; color: #2e3480; font-weight: 700;">
+                        <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill px-5" style="background: #25D366; color: #ffffff; font-weight: 700;">
                             <i class="fa fa-whatsapp me-2"/>Consultar Precio
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-
-    <!-- ===== SNIPPET: Banner Precios ===== -->
-    <template id="s_insa_banner_precios" name="INSA Banner Precios">
-        <section class="s_insa_banner_precios" style="position: relative; height: 450px; overflow: hidden;">
-            <img src="/insa_website/static/src/img/snippets/banner los mejores precios.jpg" 
-                 alt="Los Mejores Precios" 
-                 style="width: 100%; height: 100%; object-fit: cover;"/>
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(46,52,128,0.75);"/>
-            <div class="container h-100" style="position: relative; z-index: 2;">
-                <div class="row align-items-center justify-content-center h-100 text-center">
-                    <div class="col-lg-10">
-                        <span class="badge rounded-pill px-4 py-3 mb-4" style="background: #e74c3c; color: #ffffff; font-size: 1.2rem; font-weight: 800;">
-                            <i class="fa fa-fire me-2"/>¡OFERTAS IMPERDIBLES!
-                        </span>
-                        <h2 class="display-3 fw-bold mb-4" style="color: #ffffff; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">
-                            LOS MEJORES <span style="color: #a3d526;">PRECIOS</span>
-                        </h2>
-                        <p class="lead mb-4" style="color: #ffffff; font-size: 1.4rem;">
-                            Precios mayoristas y <strong>promociones especiales</strong> para vos.
-                        </p>
-                        <a href="#precios" class="btn btn-lg rounded-pill px-5 py-3" style="background: #a3d526; color: #2e3480; font-weight: 800; font-size: 1.2rem;">
-                            <i class="fa fa-tags me-2"/>VER LISTA DE PRECIOS
                         </a>
                     </div>
                 </div>
@@ -522,67 +493,6 @@
                                 <p class="small" style="color: #666;">Bidón grande retornable</p>
                                 <span class="badge rounded-pill px-4 py-2" style="background: #a3d526; color: #2e3480; font-size: 1.3rem; font-weight: 700;">
                                     $ 5.500
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-
-    <!-- ===== SNIPPET: Productos Soda con Precios ===== -->
-    <template id="s_insa_productos_soda" name="INSA Productos Soda">
-        <section class="s_insa_productos_soda pt80 pb80" style="background: #ffffff;">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <span class="badge rounded-pill px-4 py-2 mb-3" style="background: #a3d526; color: #2e3480;">
-                        <i class="fa fa-flask me-2"/>Soda y Más
-                    </span>
-                    <h2 class="display-5 fw-bold" style="color: #2e3480;">Soda y Bidones Chicos</h2>
-                </div>
-                
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card h-100 border-0 shadow text-center">
-                            <div class="card-body p-4">
-                                <div class="mb-3" style="font-size: 4rem; color: #a3d526;">
-                                    <i class="fa fa-flask"/>
-                                </div>
-                                <h5 class="fw-bold" style="color: #2e3480;">Soda 1 1/4 litros</h5>
-                                <p class="small" style="color: #666;">Sifón de soda tradicional</p>
-                                <span class="badge rounded-pill px-4 py-2" style="background: #2e3480; color: #ffffff; font-size: 1.3rem; font-weight: 700;">
-                                    $ 1.100
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card h-100 border-0 shadow text-center">
-                            <div class="card-body p-4">
-                                <div class="mb-3" style="font-size: 4rem; color: #c9a227;">
-                                    <i class="fa fa-glass"/>
-                                </div>
-                                <h5 class="fw-bold" style="color: #2e3480;">Amargo Sabot</h5>
-                                <p class="small" style="color: #666;">Pomelo rosado tradicional</p>
-                                <span class="badge rounded-pill px-4 py-2" style="background: #2e3480; color: #ffffff; font-size: 1.3rem; font-weight: 700;">
-                                    $ 1.500
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card h-100 border-0 shadow text-center">
-                            <div class="card-body p-4">
-                                <div class="mb-3" style="font-size: 4rem; color: #a3d526;">
-                                    <i class="fa fa-tint"/>
-                                </div>
-                                <h5 class="fw-bold" style="color: #2e3480;">Bidón 6 litros</h5>
-                                <p class="small" style="color: #666;">Bidón compacto con manija</p>
-                                <span class="badge rounded-pill px-4 py-2" style="background: #2e3480; color: #ffffff; font-size: 1.3rem; font-weight: 700;">
-                                    $ 3.300
                                 </span>
                             </div>
                         </div>
@@ -858,10 +768,10 @@
 
     <!-- ===== SNIPPET: Slogan ===== -->
     <template id="s_insa_slogan" name="INSA Slogan">
-        <section class="s_insa_slogan pt80 pb80" style="background: #2e3480;">
+        <section class="s_insa_slogan pt80 pb80" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
             <div class="container text-center">
                 <img src="/insa_website/static/src/img/snippets/logo.png" alt="INSA" style="max-height: 80px; margin-bottom: 2rem;"/>
-                <h2 class="display-4 fst-italic fw-bold mb-4" style="color: #ffffff; max-width: 1000px; margin: 0 auto; text-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+                <h2 class="display-4 fst-italic fw-bold mb-4" style="color: #2e3480; max-width: 1000px; margin: 0 auto;">
                     "Hace 40 años llevamos a tu hogar o empresa <span style="color: #a3d526;">AGUA PURA Y SEGURA</span>"
                 </h2>
                 <p style="color: #a3d526; font-size: 1.4rem; font-weight: 600;"><i class="fa fa-tint me-2"/>INSA, Agua Pura y Segura</p>
@@ -894,7 +804,7 @@
 
     <!-- ===== SNIPPET: CTA Pedido ===== -->
     <template id="s_insa_cta_pedido" name="INSA CTA Pedido">
-        <section class="s_insa_cta_pedido pt80 pb80" style="background: linear-gradient(135deg, #2e3480 0%, #1a1f4e 100%);">
+        <section class="s_insa_cta_pedido pt80 pb80" style="background: linear-gradient(135deg, #3a4199 0%, #2e3480 100%);">
             <div class="container text-center">
                 <div class="mb-4">
                     <span class="badge rounded-pill px-4 py-3" style="background: #a3d526; color: #2e3480; font-size: 1.1rem; font-weight: 800;">
@@ -919,7 +829,7 @@
 
     <!-- ===== SNIPPET: Contacto ===== -->
     <template id="s_insa_contacto" name="INSA Contacto">
-        <section class="s_insa_contacto pt80 pb80" style="background: #1a1f4e;">
+        <section class="s_insa_contacto pt80 pb80" style="background: #2e3480;">
             <div class="container">
                 <div class="row g-4">
                     <div class="col-lg-3">
@@ -984,7 +894,7 @@
 
     <!-- ===== SNIPPET: Separador ===== -->
     <template id="s_insa_separador" name="INSA Separador">
-        <section class="s_insa_separador py-4" style="background: linear-gradient(135deg, #2e3480 0%, #1a1f4e 100%);">
+        <section class="s_insa_separador py-4" style="background: #2e3480;">
             <div class="container text-center">
                 <div class="d-flex justify-content-center align-items-center gap-4">
                     <div style="width: 60px; height: 2px; background: rgba(163,213,38,0.5);"/>
@@ -1128,19 +1038,13 @@
             <t t-snippet="insa_website.s_insa_dispenser" string="Dispenser Destacado" group="insa">
                 <keywords>insa dispenser mesa</keywords>
             </t>
-            <t t-snippet="insa_website.s_insa_banner_precios" string="Banner Precios" group="insa">
-                <keywords>insa banner precios</keywords>
-            </t>
-            <t t-snippet="insa_website.s_insa_puntos_retiro" string="Puntos de Retiro" group="insa">
+            <t t-snippet="insa_website.s_insa_puntos_retiro" string="Puntos de Retiro" group="insa"
                 <keywords>insa puntos retiro ubicacion</keywords>
             </t>
             <t t-snippet="insa_website.s_insa_productos_retornables" string="Productos Retornables" group="insa">
                 <keywords>insa productos retornables precios</keywords>
             </t>
-            <t t-snippet="insa_website.s_insa_productos_soda" string="Productos Soda" group="insa">
-                <keywords>insa soda amargo precios</keywords>
-            </t>
-            <t t-snippet="insa_website.s_insa_descartables_unidad" string="Descartables Unidad" group="insa">
+            <t t-snippet="insa_website.s_insa_descartables_unidad" string="Descartables Unidad" group="insa"
                 <keywords>insa descartables unidad</keywords>
             </t>
             <t t-snippet="insa_website.s_insa_promociones" string="Promociones" group="insa">
@@ -1181,7 +1085,7 @@
     
     <template id="insa_snippet_options" inherit_id="website.snippet_options" name="INSA Snippet Options">
         <xpath expr="." position="inside">
-            <div data-selector=".s_insa_hero, .s_insa_hero_dispenser, .s_insa_banner_camion, .s_insa_propuesta, .s_insa_galeria_bidones, .s_insa_galeria_soda, .s_insa_galeria_botellas, .s_insa_dispenser, .s_insa_banner_precios, .s_insa_puntos_retiro, .s_insa_productos_retornables, .s_insa_productos_soda, .s_insa_descartables_unidad, .s_insa_promociones, .s_insa_por_mayor, .s_insa_pallets, .s_insa_slogan, .s_insa_cta_whatsapp, .s_insa_cta_pedido, .s_insa_contacto, .s_insa_separador, .s_insa_banner_40, .s_insa_servicios, .s_insa_galeria_lifestyle" 
+            <div data-selector=".s_insa_hero, .s_insa_hero_dispenser, .s_insa_banner_camion, .s_insa_propuesta, .s_insa_galeria_bidones, .s_insa_galeria_soda, .s_insa_galeria_botellas, .s_insa_dispenser, .s_insa_puntos_retiro, .s_insa_productos_retornables, .s_insa_descartables_unidad, .s_insa_promociones, .s_insa_por_mayor, .s_insa_pallets, .s_insa_slogan, .s_insa_cta_whatsapp, .s_insa_cta_pedido, .s_insa_contacto, .s_insa_separador, .s_insa_banner_40, .s_insa_servicios, .s_insa_galeria_lifestyle" 
                  data-drop-near="section"/>
         </xpath>
     </template>
