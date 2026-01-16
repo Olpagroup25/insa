@@ -10,48 +10,50 @@
         <section class="s_insa_hero" style="position: relative; min-height: 100vh; overflow: hidden;">
             <!-- Imagen de fondo -->
             <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
-                <img src="/insa_website/static/src/img/snippets/camion de INSA.jpg" 
+                <img src="/insa_website/static/src/img/snippets/Bidones INSA.jpg" 
                      alt="INSA Agua y Soda" 
                      style="width: 100%; height: 100%; object-fit: cover;"/>
             </div>
             <!-- Overlay oscuro -->
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(46,52,128,0.85) 0%, rgba(46,52,128,0.7) 100%);"/>
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(46,52,128,0.9) 0%, rgba(46,52,128,0.75) 100%);"/>
             
             <!-- Contenido -->
             <div class="container h-100" style="position: relative; z-index: 2;">
                 <div class="row align-items-center" style="min-height: 100vh;">
-                    <div class="col-lg-7">
+                    <div class="col-lg-8">
                         <div class="mb-4">
-                            <img src="/insa_website/static/src/img/snippets/logo.png" alt="INSA" style="max-height: 80px;"/>
+                            <img src="/insa_website/static/src/img/snippets/logo.png" alt="INSA" style="max-height: 100px;"/>
                         </div>
-                        <span class="badge rounded-pill px-4 py-2 mb-4" style="background: #a3d526; color: #2e3480; font-size: 1rem; font-weight: 700;">
-                            <i class="fa fa-check-circle me-2"/>40 años de confianza
-                        </span>
-                        <h1 class="display-2 fw-bold mb-4" style="color: #ffffff; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">
-                            Agua Pura y Segura<br/>
-                            <span style="color: #a3d526;">para tu hogar</span>
+                        <div class="mb-4">
+                            <span class="badge rounded-pill px-4 py-3" style="background: #a3d526; color: #2e3480; font-size: 1.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                                <i class="fa fa-star me-2"/>40 AÑOS DE CONFIANZA
+                            </span>
+                        </div>
+                        <h1 class="display-1 fw-bold mb-4" style="color: #ffffff; text-shadow: 3px 3px 10px rgba(0,0,0,0.5); line-height: 1.1;">
+                            AGUA PURA<br/>
+                            <span style="color: #a3d526; text-shadow: 3px 3px 10px rgba(0,0,0,0.3);">EN TU HOGAR</span>
                         </h1>
-                        <p class="lead mb-4" style="color: #ffffff; font-size: 1.4rem; max-width: 600px;">
-                            Hace 40 años llevamos a tu hogar o empresa agua pura y segura. 
-                            Calidad garantizada, servicio de entrega a domicilio en Córdoba.
+                        <p class="lead mb-5" style="color: #ffffff; font-size: 1.5rem; max-width: 650px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">
+                            Llevamos agua pura y segura a tu hogar o empresa. 
+                            <strong>Entrega GRATIS</strong> en toda Córdoba.
                         </p>
-                        <div class="d-flex flex-wrap gap-3 mb-4">
-                            <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill px-4" style="background: #a3d526; color: #2e3480; font-weight: 700; border: none;">
-                                <i class="fa fa-whatsapp me-2"/>Pedir Ahora
+                        <div class="d-flex flex-wrap gap-3 mb-5">
+                            <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill px-5 py-3" style="background: #25D366; color: #ffffff; font-weight: 800; border: none; font-size: 1.3rem; box-shadow: 0 8px 25px rgba(37,211,102,0.4);">
+                                <i class="fa fa-whatsapp me-2"/>¡PEDÍ AHORA!
                             </a>
-                            <a href="#productos" class="btn btn-lg rounded-pill px-4" style="background: transparent; color: #ffffff; border: 2px solid #ffffff;">
-                                Ver Productos
+                            <a href="#productos" class="btn btn-lg rounded-pill px-5 py-3" style="background: #a3d526; color: #2e3480; border: none; font-weight: 800; font-size: 1.2rem;">
+                                <i class="fa fa-arrow-down me-2"/>VER PRECIOS
                             </a>
                         </div>
-                        <div class="d-flex flex-wrap gap-4 mt-4">
-                            <div style="color: #ffffff;">
-                                <i class="fa fa-truck me-2" style="color: #a3d526;"/>Envío a domicilio
+                        <div class="d-flex flex-wrap gap-4 mt-4 p-3 rounded-3" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(5px);">
+                            <div style="color: #ffffff; font-weight: 600;">
+                                <i class="fa fa-truck fa-lg me-2" style="color: #a3d526;"/>Envío GRATIS
                             </div>
-                            <div style="color: #ffffff;">
-                                <i class="fa fa-phone me-2" style="color: #a3d526;"/>351 682-1088
+                            <div style="color: #ffffff; font-weight: 600;">
+                                <i class="fa fa-whatsapp fa-lg me-2" style="color: #25D366;"/>351 682-1088
                             </div>
-                            <div style="color: #ffffff;">
-                                <i class="fa fa-map-marker me-2" style="color: #a3d526;"/>Córdoba, Argentina
+                            <div style="color: #ffffff; font-weight: 600;">
+                                <i class="fa fa-map-marker fa-lg me-2" style="color: #a3d526;"/>Córdoba, Argentina
                             </div>
                         </div>
                     </div>
@@ -97,18 +99,21 @@
             <img src="/insa_website/static/src/img/snippets/camion de insa en paisaje.jpg" 
                  alt="Camión INSA" 
                  style="width: 100%; height: 100%; object-fit: cover;"/>
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(46,52,128,0.9) 0%, rgba(46,52,128,0.3) 100%);"/>
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(46,52,128,0.92) 0%, rgba(46,52,128,0.4) 100%);"/>
             <div class="container h-100" style="position: relative; z-index: 2;">
                 <div class="row align-items-center h-100">
-                    <div class="col-lg-6">
-                        <h2 class="display-4 fw-bold" style="color: #ffffff;">
-                            Llegamos a<br/><span style="color: #a3d526;">toda Córdoba</span>
+                    <div class="col-lg-7">
+                        <span class="badge rounded-pill px-4 py-2 mb-4" style="background: #a3d526; color: #2e3480; font-weight: 800;">
+                            <i class="fa fa-truck me-2"/>ENVÍO GRATIS
+                        </span>
+                        <h2 class="display-3 fw-bold" style="color: #ffffff; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">
+                            LLEGAMOS A<br/><span style="color: #a3d526;">TODA CÓRDOBA</span>
                         </h2>
-                        <p class="lead" style="color: rgba(255,255,255,0.9);">
-                            Entrega a domicilio sin cargo. Pedí hoy, recibí mañana.
+                        <p class="lead mb-4" style="color: #ffffff; font-size: 1.4rem;">
+                            Entrega a domicilio <strong>SIN CARGO</strong>. Pedí hoy, recibí mañana.
                         </p>
-                        <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill" style="background: #a3d526; color: #2e3480; font-weight: 700;">
-                            <i class="fa fa-whatsapp me-2"/>Hacer Pedido
+                        <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill px-5 py-3" style="background: #25D366; color: #ffffff; font-weight: 800; font-size: 1.2rem; box-shadow: 0 8px 25px rgba(37,211,102,0.4);">
+                            <i class="fa fa-whatsapp me-2"/>¡HACER PEDIDO!
                         </a>
                     </div>
                 </div>
@@ -121,9 +126,12 @@
         <section class="s_insa_propuesta pt80 pb80" style="background: #ffffff;">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold" style="color: #2e3480;">¿Por qué elegir INSA?</h2>
-                    <p class="lead mx-auto" style="max-width: 700px; color: #666;">
-                        40 años de experiencia nos respaldan. Calidad, confianza y servicio.
+                    <span class="badge rounded-pill px-4 py-2 mb-3" style="background: #2e3480; color: #ffffff; font-weight: 700;">
+                        <i class="fa fa-trophy me-2"/>NUESTRA GARANTÍA
+                    </span>
+                    <h2 class="display-4 fw-bold" style="color: #2e3480;">¿POR QUÉ ELEGIR <span style="color: #a3d526;">INSA?</span></h2>
+                    <p class="lead mx-auto" style="max-width: 700px; color: #555; font-size: 1.3rem;">
+                        <strong>40 años de experiencia</strong> nos respaldan. Calidad, confianza y servicio.
                     </p>
                 </div>
                 
@@ -203,10 +211,11 @@
         <section class="s_insa_galeria_bidones pt80 pb80" style="background: #f5f5f5;" id="productos">
             <div class="container">
                 <div class="text-center mb-5">
-                    <span class="badge rounded-pill px-4 py-2 mb-3" style="background: #2e3480; color: #ffffff;">
-                        <i class="fa fa-tint me-2"/>Productos
+                    <span class="badge rounded-pill px-4 py-3 mb-3" style="background: #a3d526; color: #2e3480; font-weight: 800; font-size: 1rem;">
+                        <i class="fa fa-tint me-2"/>PRODUCTOS DESTACADOS
                     </span>
-                    <h2 class="display-5 fw-bold" style="color: #2e3480;">Nuestros Bidones</h2>
+                    <h2 class="display-4 fw-bold" style="color: #2e3480;">BIDONES DE AGUA PURA</h2>
+                    <p class="lead" style="color: #555;">Agua purificada de la más alta calidad</p>
                 </div>
                 
                 <div class="row g-4">
@@ -214,9 +223,9 @@
                         <div class="position-relative rounded-4 overflow-hidden shadow-lg" style="height: 400px;">
                             <img src="/insa_website/static/src/img/snippets/Bidones INSA.jpg" 
                                  alt="Bidones INSA" class="w-100 h-100" style="object-fit: cover;"/>
-                            <div class="position-absolute bottom-0 start-0 end-0 p-4" style="background: linear-gradient(transparent, rgba(46,52,128,0.95));">
-                                <h4 class="text-white fw-bold mb-2">Bidones de Agua</h4>
-                                <p class="text-white-50 mb-0">15 y 20 litros - Retornables</p>
+                            <div class="position-absolute bottom-0 start-0 end-0 p-4" style="background: linear-gradient(transparent, rgba(46,52,128,0.98));">
+                                <h4 class="fw-bold mb-2" style="color: #ffffff;">Bidones de Agua</h4>
+                                <p class="mb-0" style="color: #a3d526; font-weight: 600;">15 y 20 litros • Retornables</p>
                             </div>
                         </div>
                     </div>
@@ -377,22 +386,25 @@
 
     <!-- ===== SNIPPET: Banner Precios ===== -->
     <template id="s_insa_banner_precios" name="INSA Banner Precios">
-        <section class="s_insa_banner_precios" style="position: relative; height: 400px; overflow: hidden;">
+        <section class="s_insa_banner_precios" style="position: relative; height: 450px; overflow: hidden;">
             <img src="/insa_website/static/src/img/snippets/banner los mejores precios.jpg" 
                  alt="Los Mejores Precios" 
                  style="width: 100%; height: 100%; object-fit: cover;"/>
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(46,52,128,0.6);"/>
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(46,52,128,0.75);"/>
             <div class="container h-100" style="position: relative; z-index: 2;">
                 <div class="row align-items-center justify-content-center h-100 text-center">
-                    <div class="col-lg-8">
-                        <h2 class="display-4 fw-bold" style="color: #ffffff;">
-                            Los Mejores <span style="color: #a3d526;">Precios</span>
+                    <div class="col-lg-10">
+                        <span class="badge rounded-pill px-4 py-3 mb-4" style="background: #e74c3c; color: #ffffff; font-size: 1.2rem; font-weight: 800;">
+                            <i class="fa fa-fire me-2"/>¡OFERTAS IMPERDIBLES!
+                        </span>
+                        <h2 class="display-3 fw-bold mb-4" style="color: #ffffff; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">
+                            LOS MEJORES <span style="color: #a3d526;">PRECIOS</span>
                         </h2>
-                        <p class="lead mb-4" style="color: rgba(255,255,255,0.9);">
-                            Precios mayoristas y promociones especiales para vos.
+                        <p class="lead mb-4" style="color: #ffffff; font-size: 1.4rem;">
+                            Precios mayoristas y <strong>promociones especiales</strong> para vos.
                         </p>
-                        <a href="#precios" class="btn btn-lg rounded-pill px-5" style="background: #a3d526; color: #2e3480; font-weight: 700;">
-                            Ver Lista de Precios
+                        <a href="#precios" class="btn btn-lg rounded-pill px-5 py-3" style="background: #a3d526; color: #2e3480; font-weight: 800; font-size: 1.2rem;">
+                            <i class="fa fa-tags me-2"/>VER LISTA DE PRECIOS
                         </a>
                     </div>
                 </div>
@@ -447,11 +459,11 @@
         <section class="s_insa_productos_retornables pt80 pb80" style="background: #f5f5f5;" id="precios">
             <div class="container">
                 <div class="text-center mb-5">
-                    <span class="badge rounded-pill px-4 py-2 mb-3" style="background: #2e3480; color: #ffffff;">
-                        <i class="fa fa-recycle me-2"/>Retornables
+                    <span class="badge rounded-pill px-4 py-3 mb-3" style="background: #27ae60; color: #ffffff; font-weight: 800; font-size: 1rem;">
+                        <i class="fa fa-recycle me-2"/>ECO-FRIENDLY
                     </span>
-                    <h2 class="display-5 fw-bold" style="color: #2e3480;">Productos Retornables</h2>
-                    <p class="lead" style="color: #666;">Cuidamos el medio ambiente y tu bolsillo.</p>
+                    <h2 class="display-4 fw-bold" style="color: #2e3480;">PRODUCTOS <span style="color: #a3d526;">RETORNABLES</span></h2>
+                    <p class="lead" style="color: #555; font-size: 1.2rem;">Cuidamos el medio ambiente <strong>y tu bolsillo</strong>.</p>
                 </div>
                 
                 <div class="row g-4 justify-content-center">
@@ -848,11 +860,11 @@
     <template id="s_insa_slogan" name="INSA Slogan">
         <section class="s_insa_slogan pt80 pb80" style="background: #2e3480;">
             <div class="container text-center">
-                <img src="/insa_website/static/src/img/snippets/logo.png" alt="INSA" style="max-height: 60px; margin-bottom: 2rem; filter: brightness(0) invert(1);"/>
-                <p class="display-5 fst-italic mb-4" style="color: #ffffff; max-width: 900px; margin: 0 auto;">
-                    "Hace 40 años llevamos a tu hogar o empresa agua pura y segura"
-                </p>
-                <p style="color: #a3d526; font-size: 1.2rem;">— INSA, Agua Pura y Segura</p>
+                <img src="/insa_website/static/src/img/snippets/logo.png" alt="INSA" style="max-height: 80px; margin-bottom: 2rem;"/>
+                <h2 class="display-4 fst-italic fw-bold mb-4" style="color: #ffffff; max-width: 1000px; margin: 0 auto; text-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+                    "Hace 40 años llevamos a tu hogar o empresa <span style="color: #a3d526;">AGUA PURA Y SEGURA</span>"
+                </h2>
+                <p style="color: #a3d526; font-size: 1.4rem; font-weight: 600;"><i class="fa fa-tint me-2"/>INSA, Agua Pura y Segura</p>
             </div>
         </section>
     </template>
@@ -862,16 +874,16 @@
         <section class="s_insa_cta_whatsapp pt64 pb64" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <h3 class="fw-bold mb-2" style="color: #ffffff;">
-                            <i class="fa fa-whatsapp me-2"/>¿Querés hacer tu pedido?
-                        </h3>
-                        <p class="mb-0" style="color: rgba(255,255,255,0.9);">
-                            Escribinos por WhatsApp y recibí tu agua en la puerta de tu casa.
+                    <div class="col-lg-7">
+                        <h2 class="display-5 fw-bold mb-3" style="color: #ffffff;">
+                            <i class="fa fa-whatsapp fa-lg me-3"/>¡HACÉ TU PEDIDO AHORA!
+                        </h2>
+                        <p class="lead mb-0" style="color: #ffffff; font-size: 1.3rem;">
+                            Escribinos por WhatsApp y recibí tu agua <strong>HOY MISMO</strong>.
                         </p>
                     </div>
-                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-                        <a href="https://wa.me/543516821088" target="_blank" class="btn btn-light btn-lg rounded-pill px-4">
+                    <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+                        <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill px-5 py-3" style="background: #ffffff; color: #25D366; font-weight: 800; font-size: 1.4rem; box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
                             <i class="fa fa-whatsapp me-2"/>351 682-1088
                         </a>
                     </div>
@@ -884,16 +896,21 @@
     <template id="s_insa_cta_pedido" name="INSA CTA Pedido">
         <section class="s_insa_cta_pedido pt80 pb80" style="background: linear-gradient(135deg, #2e3480 0%, #1a1f4e 100%);">
             <div class="container text-center">
-                <h2 class="display-5 fw-bold mb-4" style="color: #ffffff;">¿Listo para pedir?</h2>
-                <p class="lead mb-5" style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">
-                    Hacé tu pedido ahora y recibí agua pura y segura en tu hogar o empresa.
+                <div class="mb-4">
+                    <span class="badge rounded-pill px-4 py-3" style="background: #a3d526; color: #2e3480; font-size: 1.1rem; font-weight: 800;">
+                        <i class="fa fa-bolt me-2"/>ENTREGA EN 24HS
+                    </span>
+                </div>
+                <h2 class="display-3 fw-bold mb-4" style="color: #ffffff;">¿LISTO PARA <span style="color: #a3d526;">PEDIR?</span></h2>
+                <p class="lead mb-5" style="color: #ffffff; max-width: 700px; margin: 0 auto; font-size: 1.4rem;">
+                    Hacé tu pedido ahora y recibí <strong>agua pura y segura</strong> en tu hogar o empresa.
                 </p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill px-5" style="background: #a3d526; color: #2e3480; font-weight: 700;">
-                        <i class="fa fa-whatsapp me-2"/>Pedir por WhatsApp
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill px-5 py-3" style="background: #25D366; color: #ffffff; font-weight: 800; font-size: 1.3rem; box-shadow: 0 8px 30px rgba(37,211,102,0.4);">
+                        <i class="fa fa-whatsapp me-2"/>¡PEDIR POR WHATSAPP!
                     </a>
-                    <a href="tel:+543516821088" class="btn btn-lg rounded-pill px-5" style="background: transparent; color: #ffffff; border: 2px solid #ffffff;">
-                        <i class="fa fa-phone me-2"/>Llamar Ahora
+                    <a href="tel:+543516821088" class="btn btn-lg rounded-pill px-5 py-3" style="background: #a3d526; color: #2e3480; font-weight: 800; font-size: 1.2rem;">
+                        <i class="fa fa-phone me-2"/>LLAMAR: 351 682-1088
                     </a>
                 </div>
             </div>
