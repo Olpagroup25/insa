@@ -4,21 +4,22 @@
 
 :root {
     /* Paleta de colores INSA - basada en el logo */
-    --insa-teal-dark: #0a5c6b;      /* Teal oscuro principal */
-    --insa-teal: #1e8a9a;           /* Teal medio */
-    --insa-teal-light: #25a0b0;     /* Teal claro */
-    --insa-celeste: #7dd3e1;        /* Celeste para acentos */
-    --insa-primary: #0a5c6b;
-    --insa-secondary: #1e8a9a;
-    --insa-accent: #25a0b0;
-    --insa-light: #f8f9fa;
-    --insa-dark: #1a1a2e;
+    --insa-blue-dark: #2e3480;      /* Azul oscuro principal */
+    --insa-blue: #2e3480;           /* Azul principal */
+    --insa-blue-darker: #1a1f4e;    /* Azul más oscuro */
+    --insa-green: #a3d526;          /* Verde lima */
+    --insa-white: #ffffff;          /* Blanco */
+    --insa-primary: #2e3480;
+    --insa-secondary: #a3d526;
+    --insa-accent: #a3d526;
+    --insa-light: #f5f5f5;
+    --insa-dark: #1a1f4e;
     --insa-text: #333333;
-    --insa-green: #27ae60;          /* Verde para promociones */
-    --insa-red: #e74c3c;            /* Rojo para ofertas */
-    --insa-purple: #8e44ad;         /* Morado para pallets */
+    --insa-promo-green: #27ae60;    /* Verde para promociones */
+    --insa-promo-red: #e74c3c;      /* Rojo para ofertas */
+    --insa-promo-purple: #8e44ad;   /* Morado para pallets */
     --insa-whatsapp: #25D366;       /* Verde WhatsApp */
-    --insa-gradient: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 50%, #25a0b0 100%);
+    --insa-gradient: linear-gradient(135deg, #2e3480 0%, #1a1f4e 100%);
 }
 
 /* ===== UTILIDADES ===== */
