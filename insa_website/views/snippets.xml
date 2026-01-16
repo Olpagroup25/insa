@@ -1038,13 +1038,13 @@
             <t t-snippet="insa_website.s_insa_dispenser" string="Dispenser Destacado" group="insa">
                 <keywords>insa dispenser mesa</keywords>
             </t>
-            <t t-snippet="insa_website.s_insa_puntos_retiro" string="Puntos de Retiro" group="insa"
+            <t t-snippet="insa_website.s_insa_puntos_retiro" string="Puntos de Retiro" group="insa">
                 <keywords>insa puntos retiro ubicacion</keywords>
             </t>
             <t t-snippet="insa_website.s_insa_productos_retornables" string="Productos Retornables" group="insa">
                 <keywords>insa productos retornables precios</keywords>
             </t>
-            <t t-snippet="insa_website.s_insa_descartables_unidad" string="Descartables Unidad" group="insa"
+            <t t-snippet="insa_website.s_insa_descartables_unidad" string="Descartables Unidad" group="insa">
                 <keywords>insa descartables unidad</keywords>
             </t>
             <t t-snippet="insa_website.s_insa_promociones" string="Promociones" group="insa">
