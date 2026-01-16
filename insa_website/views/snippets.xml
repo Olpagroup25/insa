@@ -7,62 +7,48 @@
 
     <!-- ===== SNIPPET: Hero INSA ===== -->
     <template id="s_insa_hero" name="INSA Hero Principal">
-        <section class="s_insa_hero pt96 pb96" style="background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 50%, #25a0b0 100%);">
-            <div class="container">
+        <section class="s_insa_hero pt96 pb96" style="background: linear-gradient(135deg, #0a5c6b 0%, #1e8a9a 50%, #25a0b0 100%); position: relative; overflow: hidden;">
+            <!-- Overlay para mejorar legibilidad -->
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 92, 107, 0.3);"/>
+            <div class="container" style="position: relative; z-index: 2;">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <span class="badge rounded-pill px-3 py-2 mb-3" style="background: rgba(255,255,255,0.2); color: white; font-size: 0.9rem;">
+                        <span class="badge rounded-pill px-3 py-2 mb-3" style="background: #25D366; color: white; font-size: 0.9rem;">
                             <i class="fa fa-check-circle me-1"/> 40 años de confianza
                         </span>
-                        <h1 class="display-3 text-white fw-bold mb-4">
+                        <h1 class="display-3 fw-bold mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
                             Agua Pura y Segura<br/>
                             <span style="color: #7dd3e1;">para tu hogar</span>
                         </h1>
-                        <p class="lead text-white mb-4" style="opacity: 0.95; font-size: 1.3rem;">
+                        <p class="lead mb-4" style="color: #ffffff; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
                             Hace 40 años llevamos a tu hogar o empresa agua pura y segura. 
                             Calidad garantizada, servicio de entrega a domicilio.
                         </p>
                         <div class="mt-4">
-                            <a href="https://wa.me/543516821088" target="_blank" class="btn btn-light btn-lg rounded-pill me-2 mb-2">
+                            <a href="https://wa.me/543516821088" target="_blank" class="btn btn-lg rounded-pill me-2 mb-2" style="background: #25D366; color: white; border: none;">
                                 <i class="fa fa-whatsapp me-2"/>Pedir Ahora
                             </a>
-                            <a href="#productos" class="btn btn-outline-light btn-lg rounded-pill mb-2">
+                            <a href="#productos" class="btn btn-outline-light btn-lg rounded-pill mb-2" style="border-width: 2px;">
                                 Ver Productos
                             </a>
                         </div>
+                        <div class="mt-4 d-flex align-items-center gap-4">
+                            <div class="text-white">
+                                <i class="fa fa-truck me-2" style="color: #7dd3e1;"/>
+                                <span style="font-size: 0.9rem;">Envío a domicilio</span>
+                            </div>
+                            <div class="text-white">
+                                <i class="fa fa-phone me-2" style="color: #7dd3e1;"/>
+                                <span style="font-size: 0.9rem;">351 682-1088</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6 text-center d-none d-lg-block">
-                        <div class="position-relative" style="height: 400px;">
-                            <div class="position-absolute" style="top: 5%; left: 15%;">
-                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 100px; height: 100px;">
-                                    <i class="fa fa-tint fa-3x" style="color: #0a5c6b;"/>
-                                </div>
-                            </div>
-                            <div class="position-absolute" style="top: 10%; right: 20%;">
-                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                    <i class="fa fa-truck fa-2x" style="color: #1e8a9a;"/>
-                                </div>
-                            </div>
-                            <div class="position-absolute" style="top: 45%; left: 5%;">
-                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
-                                    <i class="fa fa-home fa-2x" style="color: #0a5c6b;"/>
-                                </div>
-                            </div>
-                            <div class="position-absolute" style="top: 35%; right: 10%;">
-                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
-                                    <i class="fa fa-shield fa-4x" style="color: #25a0b0;"/>
-                                </div>
-                            </div>
-                            <div class="position-absolute" style="bottom: 15%; left: 25%;">
-                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
-                                    <i class="fa fa-clock-o fa-3x" style="color: #1e8a9a;"/>
-                                </div>
-                            </div>
-                            <div class="position-absolute" style="bottom: 25%; right: 25%;">
-                                <div class="rounded-circle bg-white shadow-lg d-flex align-items-center justify-content-center" style="width: 75px; height: 75px;">
-                                    <i class="fa fa-star fa-2x" style="color: #0a5c6b;"/>
-                                </div>
-                            </div>
+                        <div class="position-relative">
+                            <img src="/insa_website/static/src/img/snippets/producto_01.jpg" 
+                                 alt="Productos INSA" 
+                                 class="img-fluid rounded-4 shadow-lg" 
+                                 style="max-height: 450px; object-fit: cover; border: 5px solid rgba(255,255,255,0.2);"/>
                         </div>
                     </div>
                 </div>
@@ -624,6 +610,109 @@
         </section>
     </template>
 
+    <!-- ===== SNIPPET: Galería de Productos ===== -->
+    <template id="s_insa_galeria" name="INSA Galería de Productos">
+        <section class="s_insa_galeria pt80 pb80 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="badge rounded-pill px-3 py-2 mb-3" style="background: #0a5c6b; color: white;">
+                        <i class="fa fa-camera me-1"/> Nuestros Productos
+                    </span>
+                    <h2 class="display-5 fw-bold" style="color: #0a5c6b;">Galería de Productos</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                        Conocé nuestra variedad de productos de agua y soda.
+                    </p>
+                </div>
+                
+                <div class="row g-3">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="position-relative overflow-hidden rounded-3" style="height: 250px;">
+                            <img src="/insa_website/static/src/img/snippets/producto_02.jpg" 
+                                 alt="Producto INSA" class="w-100 h-100" style="object-fit: cover;"/>
+                            <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(transparent, rgba(10,92,107,0.9));">
+                                <span class="text-white fw-bold">Bidones de Agua</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="position-relative overflow-hidden rounded-3" style="height: 250px;">
+                            <img src="/insa_website/static/src/img/snippets/producto_03.jpg" 
+                                 alt="Producto INSA" class="w-100 h-100" style="object-fit: cover;"/>
+                            <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(transparent, rgba(10,92,107,0.9));">
+                                <span class="text-white fw-bold">Dispensers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="position-relative overflow-hidden rounded-3" style="height: 250px;">
+                            <img src="/insa_website/static/src/img/snippets/producto_04.jpg" 
+                                 alt="Producto INSA" class="w-100 h-100" style="object-fit: cover;"/>
+                            <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(transparent, rgba(10,92,107,0.9));">
+                                <span class="text-white fw-bold">Soda y Sifones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="position-relative overflow-hidden rounded-3" style="height: 250px;">
+                            <img src="/insa_website/static/src/img/snippets/producto_05.jpg" 
+                                 alt="Producto INSA" class="w-100 h-100" style="object-fit: cover;"/>
+                            <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(transparent, rgba(10,92,107,0.9));">
+                                <span class="text-white fw-bold">Botellas Descartables</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="position-relative overflow-hidden rounded-3" style="height: 250px;">
+                            <img src="/insa_website/static/src/img/snippets/producto_06.jpg" 
+                                 alt="Producto INSA" class="w-100 h-100" style="object-fit: cover;"/>
+                            <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(transparent, rgba(10,92,107,0.9));">
+                                <span class="text-white fw-bold">Packs y Promociones</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===== SNIPPET: Galería Grande ===== -->
+    <template id="s_insa_galeria_grande" name="INSA Galería Grande">
+        <section class="s_insa_galeria_grande pt80 pb80" style="background: #f8f9fa;">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold" style="color: #0a5c6b;">Más Productos</h2>
+                </div>
+                
+                <div class="row g-2">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="/insa_website/static/src/img/snippets/producto_07.jpg" alt="Producto" class="w-100 rounded-2" style="height: 180px; object-fit: cover;"/>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="/insa_website/static/src/img/snippets/producto_08.jpg" alt="Producto" class="w-100 rounded-2" style="height: 180px; object-fit: cover;"/>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="/insa_website/static/src/img/snippets/producto_09.jpg" alt="Producto" class="w-100 rounded-2" style="height: 180px; object-fit: cover;"/>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="/insa_website/static/src/img/snippets/producto_10.jpg" alt="Producto" class="w-100 rounded-2" style="height: 180px; object-fit: cover;"/>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="/insa_website/static/src/img/snippets/producto_11.jpg" alt="Producto" class="w-100 rounded-2" style="height: 180px; object-fit: cover;"/>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="/insa_website/static/src/img/snippets/producto_12.jpg" alt="Producto" class="w-100 rounded-2" style="height: 180px; object-fit: cover;"/>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="/insa_website/static/src/img/snippets/producto_13.jpg" alt="Producto" class="w-100 rounded-2" style="height: 180px; object-fit: cover;"/>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="/insa_website/static/src/img/snippets/producto_14.jpg" alt="Producto" class="w-100 rounded-2" style="height: 180px; object-fit: cover;"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
     <!-- ===== SNIPPET: CTA WhatsApp ===== -->
     <template id="s_insa_cta_whatsapp" name="INSA CTA WhatsApp">
         <section class="s_insa_cta_whatsapp pt64 pb64" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
@@ -880,13 +969,19 @@
             <t t-snippet="insa_website.s_insa_servicios" string="Servicios INSA" group="insa">
                 <keywords>insa servicios entrega domicilio</keywords>
             </t>
+            <t t-snippet="insa_website.s_insa_galeria" string="Galería de Productos" group="insa">
+                <keywords>insa galeria fotos productos imagenes</keywords>
+            </t>
+            <t t-snippet="insa_website.s_insa_galeria_grande" string="Galería Grande" group="insa">
+                <keywords>insa galeria grande fotos grid</keywords>
+            </t>
         </xpath>
     </template>
     
     <!-- Opciones de snippets -->
     <template id="insa_snippet_options" inherit_id="website.snippet_options" name="INSA Snippet Options">
         <xpath expr="." position="inside">
-            <div data-selector=".s_insa_hero, .s_insa_propuesta, .s_insa_productos_retornables, .s_insa_productos_soda, .s_insa_descartables_unidad, .s_insa_promociones, .s_insa_por_mayor, .s_insa_pallets, .s_insa_slogan, .s_insa_cta_whatsapp, .s_insa_cta_pedido, .s_insa_contacto, .s_insa_separador, .s_insa_banner_40, .s_insa_servicios" 
+            <div data-selector=".s_insa_hero, .s_insa_propuesta, .s_insa_productos_retornables, .s_insa_productos_soda, .s_insa_descartables_unidad, .s_insa_promociones, .s_insa_por_mayor, .s_insa_pallets, .s_insa_slogan, .s_insa_cta_whatsapp, .s_insa_cta_pedido, .s_insa_contacto, .s_insa_separador, .s_insa_banner_40, .s_insa_servicios, .s_insa_galeria, .s_insa_galeria_grande" 
                  data-drop-near="section"/>
         </xpath>
     </template>
