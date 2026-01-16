@@ -807,7 +807,7 @@
         <section class="s_insa_cta_pedido pt80 pb80" style="background: linear-gradient(135deg, #3a4199 0%, #2e3480 100%);">
             <div class="container text-center">
                 <div class="mb-4">
-                    <span class="badge rounded-pill px-4 py-3" style="background: #a3d526; color: #2e3480; font-size: 1.1rem; font-weight: 800;">
+                    <span class="badge rounded-pill px-4 py-3" style="background: #a3d526; color: #ffffff; font-size: 1.1rem; font-weight: 800;">
                         <i class="fa fa-bolt me-2"/>ENTREGA EN 24HS
                     </span>
                 </div>
