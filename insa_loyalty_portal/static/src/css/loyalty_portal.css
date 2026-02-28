@@ -21,304 +21,275 @@
 
 
 /* ============================================================
-   POPUP DIALOG
+   POPUP DIALOG (targets the actual .o_technical_modal DOM)
    ============================================================ */
 
-/* Remove default dialog padding */
-.insa-loyalty-dialog .modal-body {
+/* --- Modal outer shell --- */
+.o_technical_modal .modal-dialog.modal-md {
+    max-width: 520px;
+}
+
+.o_technical_modal .modal-content {
+    border: none !important;
+    border-radius: 20px !important;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25) !important;
+}
+
+.o_technical_modal .modal-body {
     padding: 0 !important;
-}
-
-.insa-loyalty-popup {
     overflow: hidden;
-    border-radius: 12px;
 }
 
 
-/* --- Header --- */
-.insa-loyalty-header {
+/* --- Header area (first child: the flex row with icon, name, points, close) --- */
+.o_technical_modal .modal-body > .d-flex.align-items-center:first-child {
+    background: linear-gradient(135deg, #2e3480 0%, #4a50a0 50%, #a3d526 100%);
+    padding: 1.3rem 1.5rem;
+    margin: 0;
     position: relative;
-    overflow: hidden;
 }
 
-.insa-loyalty-header-bg {
-    position: absolute;
-    inset: 0;
-    background: var(--insa-gradient);
-    opacity: 1;
-}
-
-.insa-loyalty-header-bg::after {
+.o_technical_modal .modal-body > .d-flex.align-items-center:first-child::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);
+        radial-gradient(circle at 15% 85%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.06) 0%, transparent 40%);
+    pointer-events: none;
 }
 
-.insa-loyalty-header-content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 1.25rem 1.5rem;
-}
-
-.insa-loyalty-icon-wrapper {
-    width: 52px;
-    height: 52px;
-    background: rgba(255,255,255,0.2);
+/* Program icon */
+.o_technical_modal .modal-body > .d-flex.align-items-center:first-child img.img-fluid {
+    width: 44px !important;
+    height: 44px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255,255,255,0.25);
-    flex-shrink: 0;
-}
-
-.insa-loyalty-icon-wrapper img {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     filter: brightness(0) invert(1);
 }
 
-.insa-loyalty-program-name {
-    font-size: 1.15rem;
+/* Program name */
+.o_technical_modal .modal-body > .d-flex.align-items-center:first-child .fs-5 {
+    color: #fff !important;
     font-weight: 700;
-    color: #fff;
-    line-height: 1.3;
+    font-size: 1.1rem !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.insa-loyalty-subtitle {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.75);
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
+/* Points display */
+.o_technical_modal .modal-body > .d-flex.align-items-center:first-child .d-flex.flex-column.align-items-end .fs-5 {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    padding: 0.4rem 1rem;
+    border-radius: 25px;
+    font-size: 0.95rem !important;
+    font-weight: 700;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
 }
 
-.insa-loyalty-close {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Expiration text */
+.o_technical_modal .modal-body > .d-flex.align-items-center:first-child .text-secondary {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.75rem !important;
+}
+
+/* Close button */
+.o_technical_modal .modal-body > .d-flex.align-items-center:first-child .btn-close {
+    filter: invert(1) brightness(2);
+    opacity: 0.7;
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    cursor: pointer;
+    padding: 0.5rem !important;
     transition: all 0.2s ease;
-    border: 1px solid rgba(255,255,255,0.2);
-    flex-shrink: 0;
 }
 
-.insa-loyalty-close:hover {
-    background: rgba(255,255,255,0.3);
+.o_technical_modal .modal-body > .d-flex.align-items-center:first-child .btn-close:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
 }
 
 
-/* --- Points Section --- */
-.insa-loyalty-points-section {
-    padding: 0 1.5rem;
-    margin-top: -1px;
+/* --- Remove default hr separator --- */
+.o_technical_modal .modal-body > hr {
+    display: none;
 }
 
-.insa-loyalty-points-card {
-    background: var(--insa-gradient-subtle);
-    border: 1px solid rgba(46, 52, 128, 0.1);
-    border-radius: 14px;
-    padding: 1.25rem;
-    text-align: center;
-    margin-top: 1rem;
-    position: relative;
-    overflow: hidden;
+
+/* --- Content area (below the header) --- */
+.o_technical_modal .modal-body > .mt-0.pt-0 {
+    padding: 0 1.4rem 1.4rem;
 }
 
-.insa-loyalty-points-card::before {
-    content: '';
-    position: absolute;
-    top: -30px;
-    right: -30px;
-    width: 80px;
-    height: 80px;
-    background: rgba(163, 213, 38, 0.1);
-    border-radius: 50%;
+
+/* --- Transaction section --- */
+.o_technical_modal .modal-body [name="history_lines"] {
+    margin-top: 1.2rem;
 }
 
-.insa-loyalty-points-label {
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--insa-primary-light);
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-}
-
-.insa-loyalty-points-value {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--insa-primary);
-    line-height: 1.2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-}
-
-.insa-points-icon {
-    font-size: 1.4rem;
-}
-
-.insa-loyalty-expiration {
+.o_technical_modal .modal-body [name="history_lines"] > strong {
+    display: block;
     font-size: 0.8rem;
-    color: #888;
-    margin-top: 0.5rem;
-}
-
-.insa-loyalty-expiration i {
-    color: var(--insa-gold);
-}
-
-
-/* --- Transactions --- */
-.insa-loyalty-transactions {
-    padding: 1rem 1.5rem 1.25rem;
-}
-
-.insa-loyalty-section-title {
-    font-size: 0.85rem;
     font-weight: 700;
     color: var(--insa-primary);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.75rem;
+    letter-spacing: 0.8px;
+    margin-bottom: 0.65rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--insa-bg-soft);
 }
 
-.insa-loyalty-section-title i {
-    color: var(--insa-accent-dark);
+.o_technical_modal .modal-body [name="history_lines"] > strong::before {
+    content: '📋 ';
 }
 
-.insa-loyalty-tx-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.insa-loyalty-tx-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.6rem 0.75rem;
-    border-radius: 8px;
+/* Transaction rows */
+.o_technical_modal .modal-body [name="history_lines"] > .row {
+    padding: 0.55rem 0.7rem !important;
+    border-radius: 10px;
+    margin: 0 !important;
     transition: background 0.15s ease;
+    border-left: 3px solid transparent;
 }
 
-.insa-loyalty-tx-item:nth-child(even) {
+.o_technical_modal .modal-body [name="history_lines"] > .row:nth-child(even) {
     background: rgba(240, 242, 255, 0.5);
 }
 
-.insa-loyalty-tx-item:hover {
+.o_technical_modal .modal-body [name="history_lines"] > .row:hover {
     background: var(--insa-bg-soft);
+    border-left-color: var(--insa-accent);
 }
 
-.insa-loyalty-tx-desc {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.9rem;
-    color: #444;
-    min-width: 0;
-    flex: 1;
-}
-
-.insa-loyalty-tx-bullet {
-    width: 8px;
-    height: 8px;
-    min-width: 8px;
-    border-radius: 50%;
-    background: var(--insa-accent);
-    flex-shrink: 0;
-}
-
-.insa-loyalty-tx-link {
+/* Transaction links */
+.o_technical_modal .modal-body [name="history_lines"] > .row a {
     color: var(--insa-primary);
+    font-weight: 600;
     text-decoration: none;
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 0.88rem;
+    transition: color 0.15s ease;
 }
 
-.insa-loyalty-tx-link:hover {
+.o_technical_modal .modal-body [name="history_lines"] > .row a:hover {
     color: var(--insa-accent-dark);
     text-decoration: underline;
 }
 
-.insa-loyalty-tx-points {
+/* Transaction points amount */
+.o_technical_modal .modal-body [name="history_lines"] > .row .text-end {
     font-weight: 700;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    padding-left: 1rem;
-    color: var(--insa-primary);
+    font-size: 0.88rem;
+    color: var(--insa-primary-dark);
 }
 
 
-/* --- View All Link --- */
-.insa-loyalty-view-all {
+/* --- "View History" link (translated via template) --- */
+.o_technical_modal .modal-body [name="history_lines"] > .mt-1.mb-1,
+.o_technical_modal .modal-body [name="history_lines"] > div:last-child:not(.row) {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 1rem !important;
     padding-top: 0.75rem;
     border-top: 1px solid #eee;
 }
 
-.insa-loyalty-view-all-link {
+.insa-loyalty-view-history-link,
+.o_technical_modal .modal-body [name="history_lines"] > .mt-1.mb-1 a {
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
-    padding: 0.5rem 1.5rem;
+    padding: 0.45rem 1.4rem;
     background: var(--insa-primary);
     color: #fff !important;
     border-radius: 25px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
     text-decoration: none !important;
     transition: all 0.2s ease;
 }
 
-.insa-loyalty-view-all-link:hover {
+.insa-loyalty-view-history-link:hover,
+.o_technical_modal .modal-body [name="history_lines"] > .mt-1.mb-1 a:hover {
     background: var(--insa-primary-dark);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(46, 52, 128, 0.3);
-}
-
-.insa-loyalty-view-all-link i {
-    transition: transform 0.2s ease;
-}
-
-.insa-loyalty-view-all-link:hover i {
-    transform: translateX(3px);
+    color: #fff !important;
 }
 
 
-/* --- Empty State --- */
-.insa-loyalty-empty {
+/* --- Empty state --- */
+.insa-loyalty-empty-state,
+.o_technical_modal .modal-body .alert-warning {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem !important;
+    background: var(--insa-gradient-subtle) !important;
+    border: 1px dashed rgba(46, 52, 128, 0.15) !important;
+    border-radius: 12px;
+    color: #666 !important;
+    font-size: 0.9rem;
+    margin: 1rem 0;
 }
 
-.insa-loyalty-empty-icon {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+
+/* --- Rewards section --- */
+.o_technical_modal .modal-body .d-flex.border.rounded {
+    background: var(--insa-gradient-subtle) !important;
+    border: 1px solid rgba(46, 52, 128, 0.12) !important;
+    border-radius: 12px !important;
+    padding: 0.8rem 1rem !important;
+    transition: all 0.2s ease;
 }
 
-.insa-loyalty-empty p {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 0.25rem;
+.o_technical_modal .modal-body .d-flex.border.rounded:hover {
+    border-color: var(--insa-accent) !important;
+    box-shadow: 0 2px 8px rgba(163, 213, 38, 0.15);
+}
+
+.o_technical_modal .modal-body .d-flex.border.rounded .flex-fill {
+    font-weight: 600;
+    color: #333;
+}
+
+.o_technical_modal .modal-body .d-flex.border.rounded .flex-fill::before {
+    content: '🎁 ';
+}
+
+.o_technical_modal .modal-body .d-flex.border.rounded .text-primary {
+    color: var(--insa-primary) !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    background: rgba(46, 52, 128, 0.08);
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+
+/* --- "Reclamar" / CTA button --- */
+.o_technical_modal .modal-body .d-flex.justify-content-center .btn-primary {
+    background: linear-gradient(135deg, var(--insa-primary), var(--insa-primary-light)) !important;
+    border: none !important;
+    border-radius: 25px;
+    padding: 0.5rem 2rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px rgba(46, 52, 128, 0.2);
+}
+
+.o_technical_modal .modal-body .d-flex.justify-content-center .btn-primary:hover {
+    background: linear-gradient(135deg, var(--insa-primary-dark), var(--insa-primary)) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 52, 128, 0.35);
+}
+
+.o_technical_modal .modal-body .d-flex.justify-content-center .btn-primary::before {
+    content: '⭐ ';
 }
 
 
@@ -429,31 +400,20 @@
    RESPONSIVE
    ============================================================ */
 @media (max-width: 576px) {
-    .insa-loyalty-header-content {
+    .o_technical_modal .modal-body > .d-flex.align-items-center:first-child {
         padding: 1rem;
+        flex-wrap: wrap;
     }
 
-    .insa-loyalty-points-section {
-        padding: 0 1rem;
+    .o_technical_modal .modal-body > .d-flex.align-items-center:first-child .fs-5 {
+        font-size: 0.95rem !important;
     }
 
-    .insa-loyalty-transactions {
-        padding: 1rem;
+    .o_technical_modal .modal-body > .mt-0.pt-0 {
+        padding: 0 1rem 1rem;
     }
 
-    .insa-loyalty-points-value {
-        font-size: 1.5rem;
-    }
-
-    .insa-loyalty-tx-item {
-        padding: 0.5rem;
-    }
-
-    .insa-loyalty-tx-desc {
-        font-size: 0.82rem;
-    }
-
-    .insa-loyalty-tx-points {
-        font-size: 0.82rem;
+    .o_technical_modal .modal-body [name="history_lines"] > .row a {
+        font-size: 0.8rem;
     }
 }
