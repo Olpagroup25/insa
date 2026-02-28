@@ -44,5 +44,10 @@ class StockPicking(models.Model):
             if picking.state == 'assigned':
                 for move in picking.move_ids:
                     move.quantity = move.product_uom_qty
-                picking.button_validate()
+                    move.picked = True
+                picking.with_context(
+                    skip_backorder=True,
+                    skip_sanity_check=True,
+                    cancel_backorder=True,
+                )._action_done()
         return True
