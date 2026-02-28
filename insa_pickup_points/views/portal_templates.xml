@@ -2,7 +2,7 @@
 <odoo>
 
     <!-- ============================================================ -->
-    <!-- Portal Home: add "Mis Entregas" card                         -->
+    <!-- Portal Home: add "Entregas" card with emoji                  -->
     <!-- ============================================================ -->
     <template id="portal_my_home_pickup"
               name="Portal: Puntos de Retiro"
@@ -11,15 +11,13 @@
         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
             <t t-call="portal.portal_docs_entry">
                 <t t-set="icon" t-value="'/insa_pickup_points/static/src/img/pickup_icon.svg'"/>
-                <t t-set="title">Entregas en Punto de Retiro</t>
-                <t t-set="text">Gestioná las entregas asignadas a tu punto de retiro</t>
+                <t t-set="title">📦 Entregas en Punto de Retiro</t>
+                <t t-set="text">Ver y confirmar entregas asignadas</t>
                 <t t-set="url" t-value="'/my/pickup/orders'"/>
                 <t t-set="placeholder_count" t-value="'pickup_count'"/>
             </t>
         </xpath>
     </template>
-
-
 
     <!-- ============================================================ -->
     <!-- List View: /my/pickup/orders                                 -->
@@ -32,61 +30,69 @@
                 <t t-set="title">Entregas en Punto de Retiro</t>
             </t>
 
+            <!-- Custom breadcrumb -->
+            <nav class="insa-breadcrumb">
+                <a href="/my/home"><i class="fa fa-home"/> Mi cuenta</a>
+                <span class="sep"><i class="fa fa-chevron-right"/></span>
+                <span class="current"><i class="fa fa-cube"/> Entregas</span>
+            </nav>
+
             <t t-if="not pickings">
-                <div class="alert alert-info text-center mt-3" role="alert">
-                    <p class="mb-0">
-                        <strong>No hay entregas</strong> asignadas a tu punto de retiro con el filtro seleccionado.
-                    </p>
+                <div class="insa-empty-state">
+                    <div class="empty-icon">📭</div>
+                    <p class="empty-title">Sin entregas</p>
+                    <p class="empty-text">No hay entregas asignadas con el filtro seleccionado.</p>
                 </div>
             </t>
 
             <t t-if="pickings">
                 <div class="table-responsive">
-                    <table class="table table-hover o_portal_my_doc_table">
+                    <table class="table table-sm table-striped o_list_table o_portal_my_doc_table insa-table">
                         <thead>
                             <tr>
                                 <th>Referencia</th>
                                 <th>Cliente</th>
-                                <th>Fecha Programada</th>
-                                <th>Origen</th>
-                                <th class="text-center">Estado Entrega</th>
+                                <th>Fecha</th>
+                                <th class="d-none d-md-table-cell">Origen</th>
+                                <th class="text-center">Estado</th>
                                 <th class="text-center">Confirmación</th>
                             </tr>
                         </thead>
                         <tbody>
                             <t t-foreach="pickings" t-as="picking">
-                                <tr>
+                                <tr class="insa-row">
                                     <td>
-                                        <a t-attf-href="/my/pickup/orders/#{picking.id}">
+                                        <a t-attf-href="/my/pickup/orders/#{picking.id}"
+                                           class="insa-link fw-medium">
                                             <t t-out="picking.name"/>
                                         </a>
                                     </td>
-                                    <td>
+                                    <td class="text-muted">
                                         <t t-out="picking.partner_id.name"/>
                                     </td>
-                                    <td>
+                                    <td class="text-muted">
                                         <t t-out="picking.scheduled_date" t-options="{'widget': 'date'}"/>
                                     </td>
-                                    <td>
-                                        <t t-out="picking.origin or ''"/>
+                                    <td class="text-muted d-none d-md-table-cell">
+                                        <t t-out="picking.origin or '-'"/>
                                     </td>
                                     <td class="text-center">
                                         <span t-if="picking.state == 'assigned'"
-                                              class="badge rounded-pill text-bg-warning">
-                                            Listo para entregar
+                                              class="badge rounded-pill insa-badge-ready">
+                                            Listo
                                         </span>
                                         <span t-if="picking.state == 'done'"
-                                              class="badge rounded-pill text-bg-success">
+                                              class="badge rounded-pill insa-badge-done">
                                             Realizado
                                         </span>
                                     </td>
                                     <td class="text-center">
                                         <span t-if="picking.pickup_confirmed"
-                                              class="badge rounded-pill text-bg-success">
+                                              class="badge rounded-pill insa-badge-confirmed">
                                             <i class="fa fa-check"/> Confirmado
                                         </span>
                                         <span t-else=""
-                                              class="badge rounded-pill text-bg-secondary">
+                                              class="badge rounded-pill insa-badge-pending">
                                             Pendiente
                                         </span>
                                     </td>
@@ -115,122 +121,126 @@
                 </t>
             </t>
 
-            <div class="container py-4">
+            <div class="container py-3">
                 <!-- Breadcrumb -->
-                <div class="row mb-3">
-                    <div class="col">
-                        <a href="/my/pickup/orders" class="btn btn-sm btn-outline-secondary">
-                            <i class="fa fa-arrow-left"/> Volver al listado
-                        </a>
-                    </div>
-                </div>
+                <nav class="insa-breadcrumb">
+                    <a href="/my/home"><i class="fa fa-home"/> Mi cuenta</a>
+                    <span class="sep"><i class="fa fa-chevron-right"/></span>
+                    <a href="/my/pickup/orders"><i class="fa fa-cube"/> Entregas</a>
+                    <span class="sep"><i class="fa fa-chevron-right"/></span>
+                    <span class="current"><t t-out="picking.name"/></span>
+                </nav>
 
-                <!-- Success alert after confirmation -->
-                <t t-if="request.params.get('confirmed')">
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>¡Entrega confirmada!</strong> La entrega fue marcada como confirmada exitosamente.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"/>
-                    </div>
-                </t>
-
-                <!-- Header -->
-                <div class="row">
-                    <div class="col-12">
-                        <h3>
-                            <t t-out="picking.name"/>
+                <!-- Page header -->
+                <div class="insa-page-header">
+                    <div class="d-flex align-items-center gap-3 flex-wrap">
+                        <div class="header-icon">
+                            <i class="fa fa-truck"/>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="header-title">
+                                <t t-out="picking.name"/>
+                            </div>
+                            <div class="header-subtitle">
+                                <t t-if="picking.origin">
+                                    Origen: <t t-out="picking.origin"/>
+                                </t>
+                            </div>
+                        </div>
+                        <div>
                             <span t-if="picking.pickup_confirmed"
-                                  class="badge text-bg-success ms-2">
-                                <i class="fa fa-check"/> Confirmado
+                                  class="badge rounded-pill insa-badge-confirmed-lg">
+                                <i class="fa fa-check-circle"/> Confirmado
                             </span>
                             <span t-else=""
-                                  class="badge text-bg-warning ms-2">
-                                Pendiente de confirmación
+                                  class="badge rounded-pill insa-badge-pending-lg">
+                                <i class="fa fa-clock-o"/> Pendiente
                             </span>
-                        </h3>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Info cards -->
-                <div class="row mt-3">
+                <div class="row g-3 mt-1">
                     <div class="col-md-6">
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <strong>Información de la Entrega</strong>
+                        <div class="insa-card">
+                            <div class="insa-card-header blue">
+                                <i class="fa fa-info-circle"/> Información de la Entrega
                             </div>
-                            <div class="card-body">
-                                <table class="table table-sm table-borderless mb-0">
-                                    <tr>
-                                        <td class="fw-bold" style="width: 40%;">Referencia:</td>
-                                        <td><t t-out="picking.name"/></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fw-bold">Origen:</td>
-                                        <td><t t-out="picking.origin or '-'"/></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fw-bold">Fecha Programada:</td>
-                                        <td>
-                                            <t t-out="picking.scheduled_date"
-                                               t-options="{'widget': 'datetime'}"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fw-bold">Estado:</td>
-                                        <td>
-                                            <span t-if="picking.state == 'assigned'"
-                                                  class="badge text-bg-warning">Listo</span>
-                                            <span t-if="picking.state == 'done'"
-                                                  class="badge text-bg-success">Realizado</span>
-                                        </td>
-                                    </tr>
-                                </table>
+                            <div class="insa-card-body">
+                                <div class="insa-detail-row">
+                                    <span class="label">Referencia</span>
+                                    <span class="value"><t t-out="picking.name"/></span>
+                                </div>
+                                <div class="insa-detail-row">
+                                    <span class="label">Origen</span>
+                                    <span class="value"><t t-out="picking.origin or '-'"/></span>
+                                </div>
+                                <div class="insa-detail-row">
+                                    <span class="label">Fecha Programada</span>
+                                    <span class="value">
+                                        <t t-out="picking.scheduled_date"
+                                           t-options="{'widget': 'datetime'}"/>
+                                    </span>
+                                </div>
+                                <div class="insa-detail-row">
+                                    <span class="label">Estado</span>
+                                    <span class="value">
+                                        <span t-if="picking.state == 'assigned'"
+                                              class="badge rounded-pill insa-badge-ready">Listo</span>
+                                        <span t-if="picking.state == 'done'"
+                                              class="badge rounded-pill insa-badge-done">Realizado</span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <strong>Cliente</strong>
+                        <div class="insa-card">
+                            <div class="insa-card-header green">
+                                <i class="fa fa-user"/> Cliente
                             </div>
-                            <div class="card-body">
-                                <table class="table table-sm table-borderless mb-0">
-                                    <tr>
-                                        <td class="fw-bold" style="width: 40%;">Nombre:</td>
-                                        <td><t t-out="picking.partner_id.name"/></td>
-                                    </tr>
-                                    <tr t-if="picking.partner_id.phone">
-                                        <td class="fw-bold">Teléfono:</td>
-                                        <td><t t-out="picking.partner_id.phone"/></td>
-                                    </tr>
-                                    <tr t-if="picking.partner_id.mobile">
-                                        <td class="fw-bold">Celular:</td>
-                                        <td><t t-out="picking.partner_id.mobile"/></td>
-                                    </tr>
-                                </table>
+                            <div class="insa-card-body">
+                                <div class="insa-detail-row">
+                                    <span class="label">Nombre</span>
+                                    <span class="value"><t t-out="picking.partner_id.name"/></span>
+                                </div>
+                                <div t-if="picking.partner_id.phone" class="insa-detail-row">
+                                    <span class="label">Teléfono</span>
+                                    <span class="value"><t t-out="picking.partner_id.phone"/></span>
+                                </div>
+                                <div t-if="picking.partner_id.mobile" class="insa-detail-row">
+                                    <span class="label">Celular</span>
+                                    <span class="value"><t t-out="picking.partner_id.mobile"/></span>
+                                </div>
+                                <div t-if="picking.partner_id.email" class="insa-detail-row">
+                                    <span class="label">Email</span>
+                                    <span class="value"><t t-out="picking.partner_id.email"/></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Products table -->
-                <div class="card mt-3">
-                    <div class="card-header">
-                        <strong>Productos a Entregar</strong>
+                <div class="insa-card mt-3">
+                    <div class="insa-card-header dark">
+                        <i class="fa fa-cubes"/> Productos a Entregar
                     </div>
-                    <div class="card-body p-0">
-                        <table class="table table-sm mb-0">
-                            <thead class="table-light">
+                    <div class="insa-card-body p-0">
+                        <table class="table table-sm mb-0 insa-products-table">
+                            <thead>
                                 <tr>
                                     <th>Producto</th>
-                                    <th class="text-end">Cantidad Demandada</th>
-                                    <th class="text-end">Cantidad Realizada</th>
-                                    <th>Unidad</th>
+                                    <th class="text-end">Demandada</th>
+                                    <th class="text-end">Realizada</th>
+                                    <th class="d-none d-md-table-cell">UdM</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <t t-foreach="picking.move_ids" t-as="move">
                                     <tr>
-                                        <td><t t-out="move.product_id.name"/></td>
+                                        <td class="fw-medium"><t t-out="move.product_id.name"/></td>
                                         <td class="text-end">
                                             <t t-out="move.product_uom_qty"
                                                t-options="{'widget': 'float', 'precision': 2}"/>
@@ -239,7 +249,9 @@
                                             <t t-out="move.quantity"
                                                t-options="{'widget': 'float', 'precision': 2}"/>
                                         </td>
-                                        <td><t t-out="move.product_uom.name"/></td>
+                                        <td class="d-none d-md-table-cell text-muted">
+                                            <t t-out="move.product_uom.name"/>
+                                        </td>
                                     </tr>
                                 </t>
                             </tbody>
@@ -248,47 +260,86 @@
                 </div>
 
                 <!-- Confirmation section -->
-                <div class="mt-4 text-center">
+                <div class="mt-4">
                     <t t-if="not picking.pickup_confirmed">
-                        <div class="card border-primary">
-                            <div class="card-body">
-                                <h5 class="card-title text-primary">
-                                    <i class="fa fa-truck"/> Confirmar Entrega
-                                </h5>
-                                <p class="card-text text-muted">
-                                    Al confirmar, indicás que el cliente ya retiró los productos de tu punto de retiro.
-                                </p>
-                                <form t-attf-action="/my/pickup/orders/#{picking.id}/confirm"
-                                      method="POST">
-                                    <input type="hidden" name="csrf_token"
-                                           t-att-value="request.csrf_token()"/>
-                                    <button type="submit"
-                                            class="btn btn-primary btn-lg"
-                                            onclick="return confirm('¿Confirmás que el cliente retiró los productos?');">
-                                        <i class="fa fa-check"/> Confirmar Entrega
-                                    </button>
-                                </form>
-                            </div>
+                        <div class="insa-confirm-section">
+                            <p class="mb-2 text-muted">
+                                ¿El cliente ya retiró los productos?
+                            </p>
+                            <button type="button"
+                                    class="btn insa-btn-confirm"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#confirmPickupModal">
+                                <i class="fa fa-check-circle"/> Confirmar Entrega
+                            </button>
                         </div>
                     </t>
                     <t t-else="">
-                        <div class="card border-success">
-                            <div class="card-body text-success">
-                                <h5 class="card-title">
-                                    <i class="fa fa-check-circle"/> Entrega Confirmada
-                                </h5>
-                                <p class="mb-1">
-                                    Confirmado el
+                        <div class="insa-confirmed-section">
+                            <i class="fa fa-check-circle fa-2x"/>
+                            <div>
+                                <div class="fw-medium">Entrega confirmada</div>
+                                <small class="text-muted">
                                     <t t-out="picking.pickup_confirmed_date"
                                        t-options="{'widget': 'datetime'}"/>
-                                </p>
-                                <p class="mb-0" t-if="picking.pickup_confirmed_by">
-                                    por <t t-out="picking.pickup_confirmed_by.name"/>
-                                </p>
+                                    <t t-if="picking.pickup_confirmed_by">
+                                        · <t t-out="picking.pickup_confirmed_by.name"/>
+                                    </t>
+                                </small>
                             </div>
                         </div>
                     </t>
                 </div>
+
+                <!-- Confirm Modal -->
+                <div class="modal fade" id="confirmPickupModal" tabindex="-1"
+                     aria-labelledby="confirmPickupLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content insa-modal">
+                            <div class="modal-header border-0 pb-0">
+                                <div class="modal-icon">📦</div>
+                            </div>
+                            <div class="modal-body text-center pt-2">
+                                <h5 class="mb-2">Confirmar entrega</h5>
+                                <p class="text-muted mb-0">
+                                    Vas a confirmar que el cliente retiró los productos
+                                    de la entrega <strong><t t-out="picking.name"/></strong>.
+                                    <br/>Esta acción no se puede deshacer.
+                                </p>
+                            </div>
+                            <div class="modal-footer border-0 justify-content-center gap-2 pt-0">
+                                <button type="button" class="btn btn-light px-4"
+                                        data-bs-dismiss="modal">
+                                    Cancelar
+                                </button>
+                                <form t-attf-action="/my/pickup/orders/#{picking.id}/confirm"
+                                      method="POST" class="d-inline">
+                                    <input type="hidden" name="csrf_token"
+                                           t-att-value="request.csrf_token()"/>
+                                    <button type="submit" class="btn insa-btn-confirm px-4">
+                                        <i class="fa fa-check"/> Confirmar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success toast (shown via JS after confirmation) -->
+                <t t-if="request.params.get('confirmed')">
+                    <div class="insa-toast-container">
+                        <div class="insa-toast show" role="alert">
+                            <div class="toast-icon">✅</div>
+                            <div class="toast-body">
+                                <strong>¡Entrega confirmada!</strong>
+                                <br/>
+                                <small>Se registró exitosamente.</small>
+                            </div>
+                            <button type="button" class="btn-close btn-close-white btn-sm"
+                                    onclick="this.closest('.insa-toast-container').remove()"/>
+                        </div>
+                    </div>
+                </t>
             </div>
         </t>
     </template>

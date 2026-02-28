@@ -31,11 +31,18 @@ class StockPicking(models.Model):
     )
 
     def action_pickup_confirm(self):
-        """Confirma la entrega desde el portal del punto de retiro."""
+        """Confirma la entrega desde el portal del punto de retiro.
+        Marca como confirmado y valida el picking (pasa a 'done').
+        """
         for picking in self:
             picking.write({
                 'pickup_confirmed': True,
                 'pickup_confirmed_date': fields.Datetime.now(),
                 'pickup_confirmed_by': self.env.uid,
             })
+            # Si el picking está listo (assigned), autocompletar cantidades y validar
+            if picking.state == 'assigned':
+                for move in picking.move_ids:
+                    move.quantity = move.product_uom_qty
+                picking.button_validate()
         return True
