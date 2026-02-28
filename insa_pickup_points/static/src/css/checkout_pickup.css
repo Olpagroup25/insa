@@ -1,0 +1,297 @@
+/* ============================================================
+   INSA Pickup Points - Checkout Popup & Map Styles
+   Brand: Primary #2e3480, Accent #a3d526
+   ============================================================ */
+
+
+/* -----------------------------------------------------------
+   "Ver punto de retiro" button in delivery method list
+   ----------------------------------------------------------- */
+.insa-pickup-info-btn {
+    background: linear-gradient(135deg, #2e3480, #4a50a0);
+    color: #fff !important;
+    border: none;
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.insa-pickup-info-btn:hover {
+    background: linear-gradient(135deg, #1e2460, #2e3480);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(46, 52, 128, 0.3);
+    color: #fff !important;
+}
+
+.insa-pickup-info-btn:active {
+    transform: translateY(0);
+}
+
+.insa-pickup-info-btn .fa {
+    color: #a3d526;
+}
+
+
+/* -----------------------------------------------------------
+   Modal
+   ----------------------------------------------------------- */
+.insa-pickup-modal-content {
+    border: none !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* --- Header --- */
+.insa-pickup-modal-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.insa-pickup-modal-header-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2e3480 0%, #4a50a0 50%, #a3d526 100%);
+}
+
+.insa-pickup-modal-header-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 85%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.06) 0%, transparent 40%);
+}
+
+.insa-pickup-modal-header-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+}
+
+.insa-pickup-modal-icon-wrap {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.25);
+    flex-shrink: 0;
+}
+
+.insa-pickup-modal-icon-wrap .fa {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.insa-pickup-modal-subtitle {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.insa-pickup-modal-close {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+    flex-shrink: 0;
+}
+
+.insa-pickup-modal-close:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.1);
+}
+
+
+/* -----------------------------------------------------------
+   Info Section (contact + hours)
+   ----------------------------------------------------------- */
+.insa-pickup-info-section {
+    padding: 1.25rem 1.5rem;
+}
+
+.insa-pickup-info-card {
+    background: #f8f9fc;
+    border: 1px solid #e8eaf0;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.insa-pickup-info-card-header {
+    background: linear-gradient(135deg, #eef0f8, #f4f5fa);
+    padding: 0.65rem 1rem;
+    font-size: 0.88rem;
+    color: #2e3480;
+    border-bottom: 1px solid #e8eaf0;
+}
+
+.insa-pickup-info-card-body {
+    padding: 0.85rem 1rem;
+}
+
+.insa-pickup-detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.35rem 0;
+    font-size: 0.88rem;
+    color: #444;
+}
+
+.insa-pickup-detail-row + .insa-pickup-detail-row {
+    border-top: 1px solid #f0f1f5;
+}
+
+.insa-detail-icon {
+    color: #2e3480;
+    width: 16px;
+    text-align: center;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.insa-pickup-detail-row a {
+    color: #2e3480;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.insa-pickup-detail-row a:hover {
+    color: #a3d526;
+    text-decoration: underline;
+}
+
+
+/* --- Hours text --- */
+.insa-pickup-hours-text {
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: #444;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+
+/* -----------------------------------------------------------
+   Map Section
+   ----------------------------------------------------------- */
+.insa-pickup-map-section {
+    border-top: 1px solid #e8eaf0;
+}
+
+.insa-pickup-map-header {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.88rem;
+    color: #2e3480;
+    background: linear-gradient(135deg, #eef0f8, #f4f5fa);
+    border-bottom: 1px solid #e8eaf0;
+}
+
+.insa-pickup-map {
+    height: 280px;
+    width: 100%;
+    background: #e8eaf0;
+    position: relative;
+    z-index: 1;
+}
+
+.insa-pickup-map-external-link {
+    display: block;
+    text-align: center;
+    padding: 0.6rem;
+    background: #f8f9fc;
+    color: #2e3480;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-top: 1px solid #e8eaf0;
+    transition: all 0.2s ease;
+}
+
+.insa-pickup-map-external-link:hover {
+    background: #eef0f8;
+    color: #1e2460;
+}
+
+
+/* -----------------------------------------------------------
+   Custom Leaflet Marker
+   ----------------------------------------------------------- */
+.insa-map-marker-icon {
+    background: transparent !important;
+    border: none !important;
+}
+
+.insa-map-marker {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.insa-map-marker .fa-map-marker {
+    font-size: 36px;
+    color: #2e3480;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.insa-map-popup {
+    font-family: inherit;
+    padding: 0.25rem;
+}
+
+.insa-map-popup strong {
+    color: #2e3480;
+    font-size: 0.9rem;
+}
+
+.insa-map-popup small {
+    color: #666;
+}
+
+
+/* -----------------------------------------------------------
+   Responsive
+   ----------------------------------------------------------- */
+@media (max-width: 768px) {
+    .insa-pickup-info-section {
+        padding: 1rem;
+    }
+
+    .insa-pickup-map {
+        height: 220px;
+    }
+
+    .insa-pickup-info-btn span {
+        display: none !important;
+    }
+
+    .insa-pickup-info-btn {
+        padding: 0.25rem 0.5rem;
+    }
+}

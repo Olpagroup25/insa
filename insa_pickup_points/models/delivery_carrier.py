@@ -15,6 +15,12 @@ class DeliveryCarrier(models.Model):
         compute='_compute_is_pickup_point',
         store=True,
     )
+    pickup_hours = fields.Text(
+        string='Horarios de Atención',
+        help='Horarios de atención del punto de retiro. Ejemplo:\n'
+             'Lunes a Viernes: 8:00 - 18:00\n'
+             'Sábados: 9:00 - 13:00',
+    )
 
     @api.depends('pickup_partner_id')
     def _compute_is_pickup_point(self):

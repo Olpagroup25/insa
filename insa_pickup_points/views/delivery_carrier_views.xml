@@ -12,6 +12,9 @@
             <xpath expr="//group[@name='provider_details']" position="inside">
                 <field name="pickup_partner_id"/>
                 <field name="is_pickup_point" invisible="1"/>
+                <field name="pickup_hours"
+                       placeholder="Ej: Lunes a Viernes 8:00 - 18:00&#10;Sábados 9:00 - 13:00"
+                       invisible="not is_pickup_point"/>
             </xpath>
         </field>
     </record>

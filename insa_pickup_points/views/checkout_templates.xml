@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================ -->
+    <!-- Inject "Ver punto de retiro" button next to pickup carriers  -->
+    <!-- ============================================================ -->
+    <template id="delivery_method_pickup_info"
+              inherit_id="website_sale.delivery_method"
+              name="INSA: Botón info punto de retiro en checkout">
+        <!-- Add info button after the carrier label -->
+        <xpath expr="//label[hasclass('o_delivery_carrier_label')]" position="after">
+            <button type="button"
+                    t-if="dm.is_pickup_point"
+                    class="btn btn-sm insa-pickup-info-btn ms-2"
+                    t-att-data-carrier-id="dm.id"
+                    title="Ver información del punto de retiro">
+                <i class="fa fa-map-marker me-1"/>
+                <span class="d-none d-md-inline">Ver punto de retiro</span>
+            </button>
+        </xpath>
+    </template>
+
+    <!-- ============================================================ -->
+    <!-- Pickup Info Bootstrap Modal (injected once in checkout page) -->
+    <!-- ============================================================ -->
+    <template id="checkout_pickup_modal"
+              inherit_id="website_sale.checkout"
+              name="INSA: Modal info punto de retiro">
+        <xpath expr="//div[@id='shop_checkout']" position="inside">
+            <!-- Modal -->
+            <div class="modal fade" id="insaPickupInfoModal" tabindex="-1"
+                 aria-labelledby="insaPickupInfoModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content insa-pickup-modal-content">
+                        <!-- Header -->
+                        <div class="insa-pickup-modal-header">
+                            <div class="insa-pickup-modal-header-bg"/>
+                            <div class="insa-pickup-modal-header-inner">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="insa-pickup-modal-icon-wrap">
+                                        <i class="fa fa-map-marker"/>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0 text-white fw-bold"
+                                            id="insaPickupInfoModalLabel">
+                                            Punto de Retiro
+                                        </h5>
+                                        <small class="insa-pickup-modal-subtitle"
+                                               id="insaPickupCarrierName"/>
+                                    </div>
+                                </div>
+                                <button type="button" class="insa-pickup-modal-close"
+                                        data-bs-dismiss="modal" aria-label="Cerrar">
+                                    <i class="fa fa-times"/>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="modal-body p-0">
+                            <!-- Loading state -->
+                            <div id="insaPickupLoading"
+                                 class="text-center py-5">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Cargando...</span>
+                                </div>
+                                <p class="mt-2 text-muted">Cargando información...</p>
+                            </div>
+
+                            <!-- Content (hidden until loaded) -->
+                            <div id="insaPickupContent" class="d-none">
+                                <!-- Partner info row -->
+                                <div class="insa-pickup-info-section">
+                                    <div class="row g-3">
+                                        <!-- Contact info -->
+                                        <div class="col-md-6">
+                                            <div class="insa-pickup-info-card">
+                                                <div class="insa-pickup-info-card-header">
+                                                    <i class="fa fa-building me-2"/>
+                                                    <span id="insaPickupPartnerName"
+                                                          class="fw-bold"/>
+                                                </div>
+                                                <div class="insa-pickup-info-card-body">
+                                                    <div class="insa-pickup-detail-row">
+                                                        <i class="fa fa-map-pin insa-detail-icon"/>
+                                                        <div>
+                                                            <div id="insaPickupAddress1"/>
+                                                            <div id="insaPickupAddress2"
+                                                                 class="text-muted small"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="insa-pickup-detail-row"
+                                                         id="insaPickupPhoneRow">
+                                                        <i class="fa fa-phone insa-detail-icon"/>
+                                                        <a id="insaPickupPhone" href="#"/>
+                                                    </div>
+                                                    <div class="insa-pickup-detail-row"
+                                                         id="insaPickupEmailRow">
+                                                        <i class="fa fa-envelope insa-detail-icon"/>
+                                                        <a id="insaPickupEmail" href="#"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Hours -->
+                                        <div class="col-md-6">
+                                            <div class="insa-pickup-info-card"
+                                                 id="insaPickupHoursCard">
+                                                <div class="insa-pickup-info-card-header">
+                                                    <i class="fa fa-clock-o me-2"/>
+                                                    <span class="fw-bold">
+                                                        Horarios de Atención
+                                                    </span>
+                                                </div>
+                                                <div class="insa-pickup-info-card-body">
+                                                    <pre id="insaPickupHours"
+                                                         class="insa-pickup-hours-text mb-0"/>
+                                                </div>
+                                            </div>
+                                            <!-- No hours fallback -->
+                                            <div class="insa-pickup-info-card d-none"
+                                                 id="insaPickupNoHoursCard">
+                                                <div class="insa-pickup-info-card-header">
+                                                    <i class="fa fa-clock-o me-2"/>
+                                                    <span class="fw-bold">
+                                                        Horarios de Atención
+                                                    </span>
+                                                </div>
+                                                <div class="insa-pickup-info-card-body text-center text-muted py-3">
+                                                    <i class="fa fa-info-circle me-1"/>
+                                                    Consultá los horarios por teléfono.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Map -->
+                                <div class="insa-pickup-map-section">
+                                    <div class="insa-pickup-map-header">
+                                        <i class="fa fa-map me-2"/>
+                                        <span class="fw-bold">Ubicación</span>
+                                    </div>
+                                    <div id="insaPickupMap" class="insa-pickup-map"/>
+                                    <a id="insaPickupMapLink"
+                                       href="#" target="_blank"
+                                       class="insa-pickup-map-external-link">
+                                        <i class="fa fa-external-link me-1"/>
+                                        Abrir en Google Maps
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

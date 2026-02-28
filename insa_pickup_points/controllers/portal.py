@@ -18,6 +18,55 @@ class PickupPointPortal(CustomerPortal):
         return values
 
     # ------------------------------------------------------------------
+    # JSON: pickup point info for checkout popup
+    # ------------------------------------------------------------------
+    @http.route(
+        '/shop/pickup_point_info/<int:carrier_id>',
+        type='json', auth='public', website=True,
+    )
+    def pickup_point_info(self, carrier_id, **kw):
+        """Return pickup point info for a delivery carrier (used in checkout popup)."""
+        carrier = request.env['delivery.carrier'].sudo().browse(carrier_id)
+        if not carrier.exists() or not carrier.is_pickup_point:
+            return {'error': True}
+
+        partner = carrier.pickup_partner_id
+        # Build address parts
+        street = partner.street or ''
+        street2 = partner.street2 or ''
+        city = partner.city or ''
+        state = partner.state_id.name if partner.state_id else ''
+        zip_code = partner.zip or ''
+        country = partner.country_id.name if partner.country_id else ''
+
+        address_parts = [p for p in [street, street2] if p]
+        locality_parts = [p for p in [zip_code, city] if p]
+        region_parts = [p for p in [state, country] if p]
+
+        address_line1 = ', '.join(address_parts)
+        address_line2 = ' '.join(locality_parts)
+        if region_parts:
+            address_line2 += (', ' if address_line2 else '') + ', '.join(region_parts)
+
+        # Full address for map query
+        full_address = ', '.join([p for p in [street, city, state, country] if p])
+
+        return {
+            'error': False,
+            'carrier_name': carrier.name,
+            'partner_name': partner.name or '',
+            'phone': partner.phone or partner.mobile or '',
+            'email': partner.email or '',
+            'address_line1': address_line1,
+            'address_line2': address_line2,
+            'full_address': full_address,
+            'pickup_hours': carrier.pickup_hours or '',
+            'partner_image_url': f'/web/image/res.partner/{partner.id}/avatar_128',
+            'latitude': partner.partner_latitude or 0,
+            'longitude': partner.partner_longitude or 0,
+        }
+
+    # ------------------------------------------------------------------
     # List: /my/pickup/orders
     # ------------------------------------------------------------------
     @http.route(

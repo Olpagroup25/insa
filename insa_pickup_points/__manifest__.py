@@ -25,10 +25,13 @@
         'views/delivery_carrier_views.xml',
         'views/stock_picking_views.xml',
         'views/portal_templates.xml',
+        'views/checkout_templates.xml',
     ],
     'assets': {
         'web.assets_frontend': [
             'insa_pickup_points/static/src/css/pickup_portal.css',
+            'insa_pickup_points/static/src/css/checkout_pickup.css',
+            'insa_pickup_points/static/src/js/checkout_pickup_info.js',
         ],
     },
     'installable': True,
