@@ -18,6 +18,10 @@
     transition: all 0.2s ease;
     white-space: nowrap;
     line-height: 1.4;
+    /* CRITICAL: ensure button is above the carrier label overlay */
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .insa-pickup-info-btn:hover {
@@ -33,6 +37,11 @@
 
 .insa-pickup-info-btn .fa {
     color: #a3d526;
+}
+
+/* Ensure the delivery method form-check allows our button to be above */
+.o_delivery_form .form-check {
+    position: relative;
 }
 
 
