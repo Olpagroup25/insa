@@ -11,7 +11,7 @@
         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
             <t t-call="portal.portal_docs_entry">
                 <t t-set="icon" t-value="'/insa_pickup_points/static/src/img/pickup_icon.svg'"/>
-                <t t-set="title">📦 Entregas en Punto de Retiro</t>
+                <t t-set="title" t-value="'📦 Entregas en Punto de Retiro'"/>
                 <t t-set="text">Ver y confirmar entregas asignadas</t>
                 <t t-set="url" t-value="'/my/pickup/orders'"/>
                 <t t-set="placeholder_count" t-value="'pickup_count'"/>
