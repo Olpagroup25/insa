@@ -90,24 +90,13 @@ publicWidget.registry.InsaPickupInfoCheckout = publicWidget.Widget.extend({
             return;
         }
 
-        // Show modal
+        // Show modal (plain DOM — no dependency on window.bootstrap)
         const modalEl = document.getElementById('insaPickupInfoModal');
         if (!modalEl) {
             console.warn('INSA Pickup: modal not found');
             return;
         }
-
-        // Bootstrap 5 modal
-        const Modal = window.bootstrap && window.bootstrap.Modal;
-        if (!Modal) {
-            console.warn('INSA Pickup: Bootstrap Modal not available');
-            return;
-        }
-        let bsModal = Modal.getInstance(modalEl);
-        if (!bsModal) {
-            bsModal = new Modal(modalEl);
-        }
-        bsModal.show();
+        this._showModal(modalEl);
 
         // Show loading, hide content
         const loading = document.getElementById('insaPickupLoading');
@@ -295,5 +284,82 @@ publicWidget.registry.InsaPickupInfoCheckout = publicWidget.Widget.extend({
         // Fix map resize when modal is shown (Leaflet needs this)
         setTimeout(function() { map.invalidateSize(); }, 300);
         setTimeout(function() { map.invalidateSize(); }, 600);
+    },
+
+    // ---- Plain DOM modal management (no Bootstrap JS needed) ----
+
+    _showModal(modalEl) {
+        // Backdrop
+        let backdrop = document.getElementById('insaPickupBackdrop');
+        if (!backdrop) {
+            backdrop = document.createElement('div');
+            backdrop.id = 'insaPickupBackdrop';
+            backdrop.className = 'modal-backdrop fade';
+            document.body.appendChild(backdrop);
+        }
+        // Force reflow then add .show
+        void backdrop.offsetHeight;
+        backdrop.classList.add('show');
+
+        modalEl.style.display = 'block';
+        modalEl.setAttribute('aria-hidden', 'false');
+        void modalEl.offsetHeight;
+        modalEl.classList.add('show');
+        document.body.classList.add('modal-open');
+
+        // Close on backdrop click
+        this._backdropClickHandler = (ev) => {
+            if (ev.target === modalEl) this._hideModal(modalEl);
+        };
+        modalEl.addEventListener('click', this._backdropClickHandler);
+
+        // Close on [data-bs-dismiss="modal"] buttons
+        modalEl.querySelectorAll('[data-bs-dismiss="modal"]').forEach((btn) => {
+            btn._insaCloseHandler = () => this._hideModal(modalEl);
+            btn.addEventListener('click', btn._insaCloseHandler);
+        });
+
+        // Close on Escape key
+        this._escHandler = (ev) => {
+            if (ev.key === 'Escape') this._hideModal(modalEl);
+        };
+        document.addEventListener('keydown', this._escHandler);
+    },
+
+    _hideModal(modalEl) {
+        modalEl.classList.remove('show');
+        document.body.classList.remove('modal-open');
+
+        const backdrop = document.getElementById('insaPickupBackdrop');
+        if (backdrop) backdrop.classList.remove('show');
+
+        // After CSS transition
+        setTimeout(() => {
+            modalEl.style.display = 'none';
+            modalEl.setAttribute('aria-hidden', 'true');
+            if (backdrop && backdrop.parentNode) backdrop.parentNode.removeChild(backdrop);
+        }, 200);
+
+        // Clean up listeners
+        if (this._backdropClickHandler) {
+            modalEl.removeEventListener('click', this._backdropClickHandler);
+            this._backdropClickHandler = null;
+        }
+        modalEl.querySelectorAll('[data-bs-dismiss="modal"]').forEach((btn) => {
+            if (btn._insaCloseHandler) {
+                btn.removeEventListener('click', btn._insaCloseHandler);
+                delete btn._insaCloseHandler;
+            }
+        });
+        if (this._escHandler) {
+            document.removeEventListener('keydown', this._escHandler);
+            this._escHandler = null;
+        }
+
+        // Destroy map to avoid stale tiles
+        if (this._mapInstance) {
+            try { this._mapInstance.remove(); } catch(e) {}
+            this._mapInstance = null;
+        }
     },
 });
