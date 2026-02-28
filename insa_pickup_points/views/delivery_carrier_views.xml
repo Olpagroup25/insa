@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================ -->
+    <!-- delivery.carrier form view: add pickup_partner_id            -->
+    <!-- ============================================================ -->
+    <record id="view_delivery_carrier_form_inherit_pickup" model="ir.ui.view">
+        <field name="name">delivery.carrier.form.inherit.pickup</field>
+        <field name="model">delivery.carrier</field>
+        <field name="inherit_id" ref="delivery.view_delivery_carrier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='provider_details']" position="inside">
+                <field name="pickup_partner_id"/>
+                <field name="is_pickup_point" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- delivery.carrier list view: add pickup_partner_id            -->
+    <!-- ============================================================ -->
+    <record id="view_delivery_carrier_list_inherit_pickup" model="ir.ui.view">
+        <field name="name">delivery.carrier.list.inherit.pickup</field>
+        <field name="model">delivery.carrier</field>
+        <field name="inherit_id" ref="delivery.view_delivery_carrier_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="pickup_partner_id" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

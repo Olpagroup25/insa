@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_picking_portal_pickup,stock.picking.portal.pickup,stock.model_stock_picking,base.group_portal,1,0,0,0
+access_stock_move_portal_pickup,stock.move.portal.pickup,stock.model_stock_move,base.group_portal,1,0,0,0
+access_stock_move_line_portal_pickup,stock.move.line.portal.pickup,stock.model_stock_move_line,base.group_portal,1,0,0,0
+access_delivery_carrier_portal_pickup,delivery.carrier.portal.pickup,delivery.model_delivery_carrier,base.group_portal,1,0,0,0
+access_product_product_portal_pickup,product.product.portal.pickup,product.model_product_product,base.group_portal,1,0,0,0
+access_product_template_portal_pickup,product.template.portal.pickup,product.model_product_template,base.group_portal,1,0,0,0
+access_uom_uom_portal_pickup,uom.uom.portal.pickup,uom.model_uom_uom,base.group_portal,1,0,0,0

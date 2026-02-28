@@ -1,0 +1,47 @@
+/* ============================================================
+   INSA Pickup Points - Portal Styles
+   ============================================================ */
+
+/* Brand colors */
+:root {
+    --insa-primary: #2e3480;
+    --insa-accent: #a3d526;
+}
+
+/* Portal pickup orders table */
+.o_portal_my_doc_table .badge {
+    font-size: 0.8rem;
+}
+
+/* Confirmation card */
+.card.border-primary .card-title {
+    color: var(--insa-primary) !important;
+}
+
+.card.border-success .card-body {
+    background-color: #f0fdf4;
+}
+
+/* Detail page spacing */
+.o_portal_pickup_detail .card {
+    margin-bottom: 1rem;
+}
+
+/* Pickup confirm button */
+.btn-primary.btn-lg .fa-check {
+    margin-right: 0.3rem;
+}
+
+/* Product table in detail */
+.table-sm td,
+.table-sm th {
+    vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .o_portal_my_doc_table th:nth-child(4),
+    .o_portal_my_doc_table td:nth-child(4) {
+        display: none;
+    }
+}

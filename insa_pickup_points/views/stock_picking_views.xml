@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================ -->
+    <!-- stock.picking form view: add pickup confirmation fields      -->
+    <!-- ============================================================ -->
+    <record id="view_picking_form_inherit_pickup" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.pickup</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='carrier_id']" position="after">
+                <field name="pickup_partner_id" readonly="1"
+                       invisible="not pickup_partner_id"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_pickup_confirm" type="object"
+                        class="oe_stat_button"
+                        icon="fa-check-circle"
+                        invisible="not pickup_partner_id"
+                        readonly="pickup_confirmed">
+                    <field name="pickup_confirmed" widget="boolean"
+                           string="Retiro Confirmado" invisible="1"/>
+                    <div class="o_stat_info">
+                        <span class="o_stat_text text-success"
+                              invisible="not pickup_confirmed">
+                            Retiro Confirmado
+                        </span>
+                        <span class="o_stat_text text-warning"
+                              invisible="pickup_confirmed">
+                            Sin Confirmar
+                        </span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- stock.picking list view: add pickup confirmation             -->
+    <!-- ============================================================ -->
+    <record id="view_picking_list_inherit_pickup" model="ir.ui.view">
+        <field name="name">stock.picking.list.inherit.pickup</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before">
+                <field name="pickup_partner_id" optional="hide"/>
+                <field name="pickup_confirmed" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
