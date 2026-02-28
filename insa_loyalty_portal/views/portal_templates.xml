@@ -1,0 +1,104 @@
+<odoo>
+
+    <!-- ===================================================
+         SIDEBAR: Mejorar tarjetas de fidelidad en /my
+         =================================================== -->
+    <template id="loyalty_buttons_override"
+              inherit_id="loyalty.loyalty_buttons"
+              name="INSA: Tarjetas de fidelidad mejoradas">
+        <!-- Reemplazar el contenedor completo -->
+        <xpath expr="//div[hasclass('o_loyalty_container')]" position="replace">
+            <div class="o_loyalty_container insa-loyalty-sidebar">
+                <div t-foreach="cards_per_programs"
+                     t-as="program"
+                     class="portal-loyalty-buttons cursor-pointer">
+                    <div t-att-data-card_id="card.id"
+                         t-foreach="cards_per_programs[program]"
+                         t-as="card"
+                         class="o_loyalty_card insa-loyalty-sidebar-card my-2">
+                        <div class="insa-sidebar-card-accent"/>
+                        <div class="insa-sidebar-card-body">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="insa-sidebar-card-icon">
+                                    <img class="img-fluid"
+                                         t-attf-src="/loyalty/static/src/img/{{ program.program_type }}.svg"
+                                         width="36"/>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <div class="insa-sidebar-card-title">
+                                        <strong t-out="program.display_name"/>
+                                    </div>
+                                    <div class="insa-sidebar-card-points">
+                                        ⭐ <t t-out="card.points_display"/>
+                                    </div>
+                                    <t t-if="program.program_type == 'loyalty' and any(reward.required_points &lt;= card.points for reward in program.reward_ids)">
+                                        <div class="insa-sidebar-reward-badge">
+                                            <i class="fa fa-gift me-1"/>¡Tenés una recompensa disponible!
+                                        </div>
+                                    </t>
+                                </div>
+                                <div class="insa-sidebar-card-arrow">
+                                    <i class="fa fa-chevron-right"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+
+    <!-- ===================================================
+         HISTORIAL: Mejorar tabla de historial
+         =================================================== -->
+    <template id="loyalty_history_override"
+              inherit_id="loyalty.loyalty_card_history_template"
+              name="INSA: Historial de puntos mejorado">
+        <!-- Cambiar título del searchbar -->
+        <xpath expr="//t[@t-call='portal.portal_searchbar']//t[@t-set='title']" position="replace">
+            <t t-set="title">Historial de Transacciones</t>
+        </xpath>
+
+        <!-- Traducir mensaje vacío -->
+        <xpath expr="//p[hasclass('alert-warning')]" position="replace">
+            <div class="insa-loyalty-history-empty text-center py-5">
+                <div style="font-size: 3rem;">📋</div>
+                <h5 class="mt-3">Sin transacciones</h5>
+                <p class="text-muted">
+                    Aún no hay movimientos de puntos registrados para esta tarjeta.
+                </p>
+            </div>
+        </xpath>
+
+        <!-- Traducir encabezados de tabla -->
+        <xpath expr="//th[text()='Description']" position="replace">
+            <th>Descripción</th>
+        </xpath>
+        <xpath expr="//th[text()='Order']" position="replace">
+            <th>Orden</th>
+        </xpath>
+        <xpath expr="//th[text()='Date']" position="replace">
+            <th>Fecha</th>
+        </xpath>
+        <xpath expr="//th[text()='Issued']" position="replace">
+            <th class="text-success">Emitidos</th>
+        </xpath>
+        <xpath expr="//th[text()='Used']" position="replace">
+            <th class="text-danger">Usados</th>
+        </xpath>
+    </template>
+
+
+    <!-- ===================================================
+         BREADCRUMBS: Traducir breadcrumbs
+         =================================================== -->
+    <template id="loyalty_breadcrumbs_override"
+              inherit_id="loyalty.portal_loyalty_history_breadcrumbs"
+              name="INSA: Breadcrumbs fidelidad">
+        <xpath expr="//li[hasclass('breadcrumb-item')]//span[text()='History']" position="replace">
+            <span>Historial de Puntos</span>
+        </xpath>
+    </template>
+
+</odoo>

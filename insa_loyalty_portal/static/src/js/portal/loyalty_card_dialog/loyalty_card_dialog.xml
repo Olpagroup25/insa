@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!--
+        Override the loyalty card dialog with improved visuals and Spanish translation.
+        We use t-inherit-mode="extension" to patch the original template.
+    -->
+    <t t-name="insa_loyalty_portal.portal_loyalty_card_dialog"
+       t-inherit="loyalty.portal_loyalty_card_dialog"
+       t-inherit-mode="primary">
+        <xpath expr="." position="replace">
+            <Dialog size="'md'" header="false" footer="false" contentClass="'insa-loyalty-dialog'" t-on-click="props.close">
+                <div class="insa-loyalty-popup" t-on-click.stop="">
+                    <!-- Header con gradiente -->
+                    <div class="insa-loyalty-header">
+                        <div class="insa-loyalty-header-bg"/>
+                        <div class="insa-loyalty-header-content">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="insa-loyalty-icon-wrapper">
+                                    <img class="img-fluid"
+                                         t-att-src="props.img_path"
+                                         width="36" alt="Loyalty"/>
+                                </div>
+                                <div>
+                                    <div class="insa-loyalty-program-name">
+                                        <t t-out="props.program.program_name"/>
+                                    </div>
+                                    <div class="insa-loyalty-subtitle">
+                                        Programa de Fidelidad
+                                    </div>
+                                </div>
+                            </div>
+                            <div type="button"
+                                 class="insa-loyalty-close"
+                                 t-on-click="props.close">
+                                <i class="fa fa-times"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Puntos destacados -->
+                    <div class="insa-loyalty-points-section">
+                        <div class="insa-loyalty-points-card">
+                            <div class="insa-loyalty-points-label">Tus Puntos Acumulados</div>
+                            <div class="insa-loyalty-points-value">
+                                <span class="insa-points-icon">⭐</span>
+                                <t t-out="props.card.points_display"/>
+                            </div>
+                            <div class="insa-loyalty-expiration" t-if="props.card.expiration_date">
+                                <i class="fa fa-calendar-o me-1"/>
+                                Válido hasta <t t-out="props.card.expiration_date"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transacciones -->
+                    <div class="insa-loyalty-transactions">
+                        <t t-if="props.history_lines.length">
+                            <div class="insa-loyalty-section-title">
+                                <i class="fa fa-exchange me-2"/>Últimas Transacciones
+                            </div>
+                            <div class="insa-loyalty-tx-list">
+                                <div t-foreach="props.history_lines"
+                                     t-as="line"
+                                     t-key="line_index"
+                                     class="insa-loyalty-tx-item">
+                                    <div class="insa-loyalty-tx-desc">
+                                        <span class="insa-loyalty-tx-bullet"/>
+                                        <t t-if="line.order_id and line.order_portal_url">
+                                            <a t-att-href="line.order_portal_url"
+                                               class="insa-loyalty-tx-link">
+                                                <t t-out="line.description"/>
+                                            </a>
+                                        </t>
+                                        <t t-else="">
+                                            <span><t t-out="line.description"/></span>
+                                        </t>
+                                    </div>
+                                    <div class="insa-loyalty-tx-points" t-out="line.points"/>
+                                </div>
+                            </div>
+                            <div class="insa-loyalty-view-all">
+                                <a t-attf-href="/my/loyalty_card/{{props.card.id}}/history/"
+                                   class="insa-loyalty-view-all-link">
+                                    <span>Ver Historial Completo</span>
+                                    <i class="fa fa-arrow-right ms-2"/>
+                                </a>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <div class="insa-loyalty-empty">
+                                <div class="insa-loyalty-empty-icon">📋</div>
+                                <p>Aún no tenés transacciones registradas.</p>
+                                <small class="text-muted">
+                                    Tus movimientos de puntos aparecerán aquí.
+                                </small>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </Dialog>
+        </xpath>
+    </t>
+</templates>

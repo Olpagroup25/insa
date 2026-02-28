@@ -1,0 +1,459 @@
+/* ============================================================
+   INSA Loyalty Portal - Custom Styles
+   Brand: Primary #2e3480 | Accent #a3d526
+   ============================================================ */
+
+/* -----------------------------------------------------------
+   VARIABLES
+   ----------------------------------------------------------- */
+:root {
+    --insa-primary: #2e3480;
+    --insa-primary-dark: #1e2460;
+    --insa-primary-light: #4a50a0;
+    --insa-accent: #a3d526;
+    --insa-accent-dark: #8ab820;
+    --insa-accent-light: #c4e96e;
+    --insa-gold: #f5a623;
+    --insa-bg-soft: #f0f2ff;
+    --insa-gradient: linear-gradient(135deg, var(--insa-primary) 0%, var(--insa-primary-light) 50%, var(--insa-accent) 100%);
+    --insa-gradient-subtle: linear-gradient(135deg, var(--insa-bg-soft) 0%, #f8fef0 100%);
+}
+
+
+/* ============================================================
+   POPUP DIALOG
+   ============================================================ */
+
+/* Remove default dialog padding */
+.insa-loyalty-dialog .modal-body {
+    padding: 0 !important;
+}
+
+.insa-loyalty-popup {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+
+/* --- Header --- */
+.insa-loyalty-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.insa-loyalty-header-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--insa-gradient);
+    opacity: 1;
+}
+
+.insa-loyalty-header-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);
+}
+
+.insa-loyalty-header-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.25rem 1.5rem;
+}
+
+.insa-loyalty-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.25);
+    flex-shrink: 0;
+}
+
+.insa-loyalty-icon-wrapper img {
+    filter: brightness(0) invert(1);
+}
+
+.insa-loyalty-program-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.insa-loyalty-subtitle {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.insa-loyalty-close {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+    flex-shrink: 0;
+}
+
+.insa-loyalty-close:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.1);
+}
+
+
+/* --- Points Section --- */
+.insa-loyalty-points-section {
+    padding: 0 1.5rem;
+    margin-top: -1px;
+}
+
+.insa-loyalty-points-card {
+    background: var(--insa-gradient-subtle);
+    border: 1px solid rgba(46, 52, 128, 0.1);
+    border-radius: 14px;
+    padding: 1.25rem;
+    text-align: center;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.insa-loyalty-points-card::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    background: rgba(163, 213, 38, 0.1);
+    border-radius: 50%;
+}
+
+.insa-loyalty-points-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--insa-primary-light);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.insa-loyalty-points-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--insa-primary);
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.insa-points-icon {
+    font-size: 1.4rem;
+}
+
+.insa-loyalty-expiration {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.insa-loyalty-expiration i {
+    color: var(--insa-gold);
+}
+
+
+/* --- Transactions --- */
+.insa-loyalty-transactions {
+    padding: 1rem 1.5rem 1.25rem;
+}
+
+.insa-loyalty-section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--insa-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--insa-bg-soft);
+}
+
+.insa-loyalty-section-title i {
+    color: var(--insa-accent-dark);
+}
+
+.insa-loyalty-tx-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.insa-loyalty-tx-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+}
+
+.insa-loyalty-tx-item:nth-child(even) {
+    background: rgba(240, 242, 255, 0.5);
+}
+
+.insa-loyalty-tx-item:hover {
+    background: var(--insa-bg-soft);
+}
+
+.insa-loyalty-tx-desc {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: #444;
+    min-width: 0;
+    flex: 1;
+}
+
+.insa-loyalty-tx-bullet {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    background: var(--insa-accent);
+    flex-shrink: 0;
+}
+
+.insa-loyalty-tx-link {
+    color: var(--insa-primary);
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.insa-loyalty-tx-link:hover {
+    color: var(--insa-accent-dark);
+    text-decoration: underline;
+}
+
+.insa-loyalty-tx-points {
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    padding-left: 1rem;
+    color: var(--insa-primary);
+}
+
+
+/* --- View All Link --- */
+.insa-loyalty-view-all {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #eee;
+}
+
+.insa-loyalty-view-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 1.5rem;
+    background: var(--insa-primary);
+    color: #fff !important;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.insa-loyalty-view-all-link:hover {
+    background: var(--insa-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(46, 52, 128, 0.3);
+}
+
+.insa-loyalty-view-all-link i {
+    transition: transform 0.2s ease;
+}
+
+.insa-loyalty-view-all-link:hover i {
+    transform: translateX(3px);
+}
+
+
+/* --- Empty State --- */
+.insa-loyalty-empty {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.insa-loyalty-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.insa-loyalty-empty p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+
+/* ============================================================
+   SIDEBAR CARDS (Portal /my)
+   ============================================================ */
+.insa-loyalty-sidebar-card {
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(46, 52, 128, 0.12);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.insa-loyalty-sidebar-card:hover {
+    border-color: var(--insa-primary);
+    box-shadow: 0 4px 16px rgba(46, 52, 128, 0.15);
+    transform: translateY(-2px);
+}
+
+.insa-sidebar-card-accent {
+    width: 5px;
+    min-height: 100%;
+    background: var(--insa-gradient);
+    flex-shrink: 0;
+}
+
+.insa-sidebar-card-body {
+    flex: 1;
+    padding: 0.85rem 1rem;
+    background: #fff;
+}
+
+.insa-sidebar-card-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--insa-bg-soft);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.insa-sidebar-card-title {
+    font-size: 0.9rem;
+    color: var(--insa-primary);
+    line-height: 1.3;
+}
+
+.insa-sidebar-card-points {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--insa-primary-dark);
+    margin-top: 0.15rem;
+}
+
+.insa-sidebar-reward-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.35rem;
+    padding: 0.2rem 0.6rem;
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    color: #e65100;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 20px;
+    animation: insa-reward-pulse 2s ease-in-out infinite;
+}
+
+@keyframes insa-reward-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.insa-sidebar-card-arrow {
+    color: #ccc;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.insa-loyalty-sidebar-card:hover .insa-sidebar-card-arrow {
+    color: var(--insa-primary);
+    transform: translateX(3px);
+}
+
+
+/* ============================================================
+   HISTORY PAGE
+   ============================================================ */
+.insa-loyalty-history-empty {
+    background: var(--insa-gradient-subtle);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    border: 1px dashed rgba(46, 52, 128, 0.15);
+}
+
+.insa-loyalty-history-empty h5 {
+    color: var(--insa-primary);
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 576px) {
+    .insa-loyalty-header-content {
+        padding: 1rem;
+    }
+
+    .insa-loyalty-points-section {
+        padding: 0 1rem;
+    }
+
+    .insa-loyalty-transactions {
+        padding: 1rem;
+    }
+
+    .insa-loyalty-points-value {
+        font-size: 1.5rem;
+    }
+
+    .insa-loyalty-tx-item {
+        padding: 0.5rem;
+    }
+
+    .insa-loyalty-tx-desc {
+        font-size: 0.82rem;
+    }
+
+    .insa-loyalty-tx-points {
+        font-size: 0.82rem;
+    }
+}
