@@ -30,13 +30,6 @@
                 <t t-set="title">Entregas en Punto de Retiro</t>
             </t>
 
-            <!-- Custom breadcrumb -->
-            <nav class="insa-breadcrumb">
-                <a href="/my/home"><i class="fa fa-home"/> Mi cuenta</a>
-                <span class="sep"><i class="fa fa-chevron-right"/></span>
-                <span class="current"><i class="fa fa-cube"/> Entregas</span>
-            </nav>
-
             <t t-if="not pickings">
                 <div class="insa-empty-state">
                     <div class="empty-icon">📭</div>
@@ -122,15 +115,6 @@
             </t>
 
             <div class="container py-3">
-                <!-- Breadcrumb -->
-                <nav class="insa-breadcrumb">
-                    <a href="/my/home"><i class="fa fa-home"/> Mi cuenta</a>
-                    <span class="sep"><i class="fa fa-chevron-right"/></span>
-                    <a href="/my/pickup/orders"><i class="fa fa-cube"/> Entregas</a>
-                    <span class="sep"><i class="fa fa-chevron-right"/></span>
-                    <span class="current"><t t-out="picking.name"/></span>
-                </nav>
-
                 <!-- Page header -->
                 <div class="insa-page-header">
                     <div class="d-flex align-items-center gap-3 flex-wrap">
@@ -342,6 +326,26 @@
                 </t>
             </div>
         </t>
+    </template>
+
+    <!-- ============================================================ -->
+    <!-- Breadcrumbs: standard Odoo integration                       -->
+    <!-- ============================================================ -->
+    <template id="portal_pickup_breadcrumbs"
+              name="Portal: Pickup Breadcrumbs"
+              inherit_id="portal.portal_breadcrumbs"
+              priority="40">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'pickup_orders'" class="breadcrumb-item">
+                Entregas en Punto de Retiro
+            </li>
+            <li t-if="page_name == 'pickup_order_detail'" class="breadcrumb-item">
+                <a href="/my/pickup/orders">Entregas</a>
+            </li>
+            <li t-if="page_name == 'pickup_order_detail'" class="breadcrumb-item active">
+                <t t-out="picking.name"/>
+            </li>
+        </xpath>
     </template>
 
 </odoo>
