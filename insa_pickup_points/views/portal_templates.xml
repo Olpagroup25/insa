@@ -19,14 +19,7 @@
         </xpath>
     </template>
 
-    <template id="portal_my_home_pickup_counter"
-              name="Portal: Pickup Counter"
-              inherit_id="portal.portal_my_home_counters"
-              priority="40">
-        <xpath expr="//t[@t-call='portal.portal_docs_entry'][last()]" position="after">
-            <!-- Counter badge for pickup orders -->
-        </xpath>
-    </template>
+
 
     <!-- ============================================================ -->
     <!-- List View: /my/pickup/orders                                 -->
